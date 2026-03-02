@@ -3,19 +3,19 @@ import mambaMark from "@/assets/mamba-mark.png";
 const WhoWeWorkWith = () => {
   return (
     <section className="section-dark relative overflow-hidden">
-      {/* Top-left brand mark — oversized, only corner visible */}
+      {/* Top-left brand mark */}
       <img
         src={mambaMark}
         alt=""
         aria-hidden="true"
-        className="absolute -top-40 -left-40 md:-top-52 md:-left-52 w-[28rem] md:w-[40rem] opacity-[0.08] pointer-events-none select-none"
+        className="absolute -top-16 -left-16 md:-top-20 md:-left-20 w-[20rem] md:w-[28rem] opacity-[0.07] pointer-events-none select-none"
       />
-      {/* Bottom-right brand mark — oversized, only corner visible */}
+      {/* Bottom-right brand mark */}
       <img
         src={mambaMark}
         alt=""
         aria-hidden="true"
-        className="absolute -bottom-40 -right-40 md:-bottom-52 md:-right-52 w-[28rem] md:w-[40rem] opacity-[0.08] pointer-events-none select-none"
+        className="absolute -bottom-16 -right-16 md:-bottom-20 md:-right-20 w-[20rem] md:w-[28rem] opacity-[0.07] pointer-events-none select-none"
       />
 
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20 relative z-10">
