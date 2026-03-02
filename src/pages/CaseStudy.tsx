@@ -5,18 +5,17 @@ import FinalCTA from "@/components/FinalCTA";
 import { getCaseStudy, getRelatedStudies } from "@/lib/caseStudies";
 
 const SectionImage = ({ src, alt, direction = "bl" }: { src: string; alt: string; direction?: "bl" | "tr" }) => {
-  const offsetClasses = direction === "bl"
-    ? "-left-2 -bottom-2 md:-left-3 md:-bottom-3"
-    : "-right-2 -top-2 md:-right-3 md:-top-3";
+  // Solid accent bar overlaps the image — half on, half off
+  const barPosition = direction === "bl"
+    ? "bottom-0 left-0 translate-y-1/2 -translate-x-2 md:-translate-x-3"
+    : "top-0 right-0 -translate-y-1/2 translate-x-2 md:translate-x-3";
 
   return (
     <section className="section-dark">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 md:py-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-8 md:py-12">
         <div className="relative">
-          <div className={`absolute ${offsetClasses} w-full h-full bg-accent`} />
-          <div className="relative overflow-hidden">
-            <img src={src} alt={alt} className="w-full h-auto block" loading="lazy" />
-          </div>
+          <img src={src} alt={alt} className="relative z-10 w-full h-auto block" loading="lazy" />
+          <div className={`absolute ${barPosition} w-full h-6 md:h-8 bg-accent z-20`} />
         </div>
       </div>
     </section>
@@ -42,14 +41,12 @@ const CaseStudy = () => {
       <section className="section-dark pt-20">
         <div className="max-w-7xl mx-auto px-6 md:px-10 pt-12 md:pt-20">
           <div className="relative">
-            <div className="absolute -left-2 -bottom-2 md:-left-3 md:-bottom-3 w-full h-full bg-accent" />
-            <div className="relative overflow-hidden">
-              <img
-                src={heroImg}
-                alt={cs.title}
-                className="w-full h-auto block"
-              />
-            </div>
+            <img
+              src={heroImg}
+              alt={cs.title}
+              className="relative z-10 w-full h-auto block"
+            />
+            <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-2 md:-translate-x-3 w-full h-6 md:h-8 bg-accent z-20" />
           </div>
         </div>
       </section>
