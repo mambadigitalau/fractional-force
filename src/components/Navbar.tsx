@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import mambaLockup from "@/assets/mamba-lockup.png";
+import mambamark from "@/assets/mamba-mark.png";
 
 const navItems = ["Services", "About", "Work", "Insights", "Contact"];
 
@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-primary-foreground/10">
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center">
-          <img src={mambaLockup} alt="Mamba Digital" className="h-7 md:h-9 w-auto" />
+          <img src={mambamark} alt="Mamba Digital" className="h-8 md:h-10 w-auto" />
         </Link>
 
         {/* Desktop nav */}

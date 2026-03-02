@@ -1,9 +1,16 @@
+import mambaLockupReverse from "@/assets/mamba-lockup-reverse.png";
+
 const Hero = () => {
   return (
     <section className="section-dark min-h-screen flex items-center pt-20">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-32">
         <div className="max-w-4xl">
-          <h1 className="headline-lg mb-8 md:mb-10 animate-fade-up">
+          <img
+            src={mambaLockupReverse}
+            alt="Mamba Digital"
+            className="h-10 md:h-14 w-auto mb-10 md:mb-14 animate-fade-up"
+          />
+          <h1 className="headline-lg mb-8 md:mb-10 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             You're not bad at marketing.{" "}
             <span className="text-accent">You just don't have anyone good at it.</span>
           </h1>
