@@ -1,60 +1,97 @@
-const partners = [
-  "Google Partner",
-  "Meta Business Partner",
-  "Shopify Plus Partner",
-  "Klaviyo Master Partner",
-];
+import fboImg from "@/assets/cases/fbo.jpg";
+import wavesImg from "@/assets/cases/waves.png";
+import koeImg from "@/assets/cases/koe.jpg";
+import nurtureImg from "@/assets/cases/nurture.jpg";
+import mjbImg from "@/assets/cases/mjb.png";
+import gwgImg from "@/assets/cases/gwg.jpg";
 
 const caseStudies = [
   {
-    type: "eCommerce: Health & Wellness",
-    metric: "+140% revenue in 6 months",
+    title: "Fat Burners Only",
+    tags: "Email Marketing, Paid Advertising",
+    desc: "No flows. No automation. No strategy. Now it's a $3M+ channel we built from scratch.",
+    image: fboImg,
+    link: "https://mambadigital.au/work/fbo/",
   },
   {
-    type: "Hospitality: Multi-location",
-    metric: "+85% qualified leads in 90 days",
+    title: "Waves AU",
+    tags: "E-Commerce, Email, Paid Advertising",
+    desc: "Garage to eight figures. Through a market collapse. We're still there.",
+    image: wavesImg,
+    link: "https://mambadigital.au/work/wavesau/",
   },
   {
-    type: "Professional Services: B2B",
-    metric: "3.2x return on ad spend",
+    title: "Katherine Outback Experience",
+    tags: "Paid Advertising, Strategy",
+    desc: "Regional touring, tourism targeting, and a #1 album. Not your typical ad account.",
+    image: koeImg,
+    link: "https://mambadigital.au/work/koe/",
+  },
+  {
+    title: "Nurture Early Learning",
+    tags: "Content & Creative, Paid Advertising",
+    desc: "Three brand new childcare centres. Built the brand. Ran the ads. All three hit targets within months.",
+    image: nurtureImg,
+    link: "https://mambadigital.au/work/nurture-early-learning/",
+  },
+  {
+    title: "MJB Seminars",
+    tags: "Paid Advertising, Strategy",
+    desc: "Zero to 437,000 followers. 1.7 million likes. For a business without a personal brand 12 months ago.",
+    image: mjbImg,
+    link: "https://mambadigital.au/work/mjb-seminars/",
+  },
+  {
+    title: "Girls With Gems",
+    tags: "E-Commerce, Paid Advertising",
+    desc: "In-store brand to eight-figure eCommerce. Attribution-led paid media at scale.",
+    image: gwgImg,
+    link: "https://mambadigital.au/work/girls-with-gems/",
   },
 ];
 
 const Proof = () => {
   return (
     <section id="work" className="section-offwhite">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-36">
-        <h2 className="headline mb-16 md:mb-20">Businesses we've grown.</h2>
-
-        {/* Partner badges */}
-        <div className="flex flex-wrap gap-6 md:gap-10 mb-20">
-          {partners.map((p) => (
-            <div
-              key={p}
-              className="border border-border px-6 py-4 font-heading text-sm md:text-base font-semibold text-foreground tracking-wide"
-            >
-              {p}
-            </div>
-          ))}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16 gap-6">
+          <h2 className="headline">Businesses we've grown.</h2>
+          <a href="#" className="btn-inverted self-start md:self-auto">
+            All Case Studies
+          </a>
         </div>
 
-        {/* Case studies */}
-        <div className="grid md:grid-cols-3 gap-px bg-border">
+        {/* Card grid - inBeat style, square corners */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {caseStudies.map((cs, i) => (
-            <div key={i} className="bg-background p-8 md:p-10">
-              <p className="text-muted-foreground text-sm font-medium mb-4 tracking-wide uppercase">
-                {cs.type}
-              </p>
-              <p className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-                {cs.metric}
-              </p>
-              <a
-                href="#"
-                className="text-foreground font-medium text-sm inline-flex items-center gap-2 hover:text-accent hover:gap-3 transition-all duration-300"
-              >
-                View case study <span>&#8594;</span>
-              </a>
-            </div>
+            <a
+              key={i}
+              href={cs.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block aspect-[3/4] overflow-hidden"
+            >
+              <img
+                src={cs.image}
+                alt={cs.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <p className="text-white/60 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
+                  {cs.tags}
+                </p>
+                <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-2">
+                  {cs.title}
+                </h3>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  {cs.desc}
+                </p>
+              </div>
+            </a>
           ))}
         </div>
       </div>
