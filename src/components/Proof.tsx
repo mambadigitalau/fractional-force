@@ -62,7 +62,7 @@ const Proof = () => {
         </div>
 
         {/* Boxed grid with vertical and horizontal lines */}
-        <div className="border border-primary-foreground/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((cs, i) => {
             const col = i % 3;
             const row = Math.floor(i / 3);
