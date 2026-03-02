@@ -14,22 +14,30 @@ const Contact = () => {
               <p className="text-accent font-heading font-semibold text-xs tracking-[0.2em] uppercase mb-6 animate-fade-up">
                 Contact
               </p>
-              <h1 className="headline-lg mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+              <h1
+                className="headline-lg mb-8 animate-fade-up"
+                style={{ animationDelay: "0.1s" }}
+              >
                 Let's talk.
               </h1>
               <p
-                className="body-lg text-primary-foreground/70 mb-12 animate-fade-up"
+                className="body-lg text-primary-foreground/70 mb-16 animate-fade-up"
                 style={{ animationDelay: "0.2s" }}
               >
-                Thirty minutes. Your business, your numbers, your situation. No pitch. No pressure. If we can help, we'll tell you how. If we can't, we'll say that too.
+                Thirty minutes. Your business, your numbers, your situation. No
+                pitch. No pressure. If we can help, we'll tell you how. If we
+                can't, we'll say that too.
               </p>
 
-              <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              <div
+                className="space-y-8 animate-fade-up"
+                style={{ animationDelay: "0.3s" }}
+              >
                 <div>
                   <p className="text-accent font-heading font-semibold text-xs tracking-[0.2em] uppercase mb-2">
                     Address
                   </p>
-                  <p className="text-primary-foreground font-heading">
+                  <p className="text-primary-foreground font-heading font-bold">
                     203 Hay Street, Subiaco WA 6008
                   </p>
                 </div>
@@ -39,74 +47,107 @@ const Contact = () => {
                   </p>
                   <a
                     href="mailto:hello@mambadigital.au"
-                    className="text-primary-foreground font-heading hover:text-accent transition-colors"
+                    className="text-primary-foreground font-heading font-bold hover:text-accent transition-colors"
                   >
                     hello@mambadigital.au
                   </a>
+                </div>
+
+                {/* Partner badges */}
+                <div className="pt-8 border-t border-primary-foreground/10">
+                  <p className="text-primary-foreground/30 text-xs font-heading tracking-wider uppercase mb-4">
+                    Partners
+                  </p>
+                  <div className="flex flex-wrap gap-x-6 gap-y-2">
+                    {[
+                      "Google Partner",
+                      "Meta Business Partner",
+                      "Shopify Plus Partner",
+                      "Klaviyo Master Partner",
+                    ].map((p) => (
+                      <span
+                        key={p}
+                        className="text-xs text-primary-foreground/40 font-heading tracking-wide"
+                      >
+                        {p}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* RIGHT — Form */}
-            <div className="animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              <form
-                className="space-y-6"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  // Form submission placeholder
-                }}
-              >
-                <div>
-                  <label className="text-primary-foreground/60 font-heading text-sm block mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground py-3 font-heading focus:outline-none focus:border-accent transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="text-primary-foreground/60 font-heading text-sm block mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground py-3 font-heading focus:outline-none focus:border-accent transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="text-primary-foreground/60 font-heading text-sm block mb-2">
-                    Business name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground py-3 font-heading focus:outline-none focus:border-accent transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="text-primary-foreground/60 font-heading text-sm block mb-2">
-                    Approximate annual revenue
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground py-3 font-heading focus:outline-none focus:border-accent transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="text-primary-foreground/60 font-heading text-sm block mb-2">
-                    What do you need help with?
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground py-3 font-heading focus:outline-none focus:border-accent transition-colors resize-none"
-                  />
-                </div>
-                <button type="submit" className="btn-primary mt-4">
-                  Send Message
-                </button>
-              </form>
+            <div
+              className="animate-fade-up"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <div className="border border-primary-foreground/10 p-8 md:p-10">
+                <p className="font-heading font-bold text-primary-foreground text-xl mb-8">
+                  Send us a message
+                </p>
+                <form
+                  className="space-y-6"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                  }}
+                >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="text-primary-foreground/50 font-heading text-xs uppercase tracking-wider block mb-3">
+                        Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        className="w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground py-3 font-heading focus:outline-none focus:border-accent transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-primary-foreground/50 font-heading text-xs uppercase tracking-wider block mb-3">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        className="w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground py-3 font-heading focus:outline-none focus:border-accent transition-colors"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="text-primary-foreground/50 font-heading text-xs uppercase tracking-wider block mb-3">
+                        Business name
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground py-3 font-heading focus:outline-none focus:border-accent transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-primary-foreground/50 font-heading text-xs uppercase tracking-wider block mb-3">
+                        Approximate annual revenue
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground py-3 font-heading focus:outline-none focus:border-accent transition-colors"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-primary-foreground/50 font-heading text-xs uppercase tracking-wider block mb-3">
+                      What do you need help with?
+                    </label>
+                    <textarea
+                      rows={4}
+                      className="w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground py-3 font-heading focus:outline-none focus:border-accent transition-colors resize-none"
+                    />
+                  </div>
+                  <button type="submit" className="btn-primary mt-4 w-full sm:w-auto">
+                    Send Message
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
