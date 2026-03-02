@@ -17,31 +17,30 @@ const Hero = () => {
             <p className="body-lg text-primary-foreground/70 max-w-2xl mb-12 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               Mamba Digital. Strategic marketing leadership and a full execution team. One consultancy. No handoffs.
             </p>
-            <div className="flex flex-col sm:flex-row items-start gap-6 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-              <a href="/contact" className="btn-primary">
+            <div className="flex flex-row items-center gap-6 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+              <a href="/contact" className="btn-primary shrink-0">
                 Book a Conversation
               </a>
-            </div>
 
-            {/* Showreel Preview */}
-            <div
-              className="mt-12 relative cursor-pointer group max-w-xl animate-fade-up"
-              style={{ animationDelay: "0.5s" }}
-              onClick={() => setShowReel(true)}
-            >
-              <img
-                src="https://img.youtube.com/vi/HuI8rTGwE3M/maxresdefault.jpg"
-                alt="Mamba Digital Showreel"
-                className="w-full aspect-video object-cover brightness-75 group-hover:brightness-90 transition-all duration-300"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="w-16 h-16 rounded-full bg-accent/90 group-hover:bg-accent flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg">
-                  <Play className="w-7 h-7 text-accent-foreground ml-1" />
-                </span>
+              {/* Showreel Preview */}
+              <div
+                className="relative cursor-pointer group w-48 md:w-56 shrink-0"
+                onClick={() => setShowReel(true)}
+              >
+                <img
+                  src="https://img.youtube.com/vi/HuI8rTGwE3M/maxresdefault.jpg"
+                  alt="Mamba Digital Showreel"
+                  className="w-full aspect-video object-cover brightness-50 group-hover:brightness-75 transition-all duration-300"
+                />
+                <div className="absolute inset-0 flex items-center justify-center gap-2">
+                  <span className="w-10 h-10 rounded-full bg-accent/90 group-hover:bg-accent flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                    <Play className="w-4 h-4 text-accent-foreground ml-0.5" />
+                  </span>
+                </div>
+                <p className="absolute bottom-2 left-2 text-primary-foreground/50 text-[10px] font-heading font-medium tracking-wider uppercase">
+                  Showreel
+                </p>
               </div>
-              <p className="absolute bottom-4 left-4 text-primary-foreground/60 text-sm font-heading font-medium tracking-wide uppercase">
-                Watch our showreel
-              </p>
             </div>
           </div>
         </div>
