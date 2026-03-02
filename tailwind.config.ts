@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-        body: ['"Inter"', 'system-ui', 'sans-serif'],
+        heading: ['"WigrumWeb"', 'system-ui', 'sans-serif'],
+        body: ['"WigrumWeb"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
