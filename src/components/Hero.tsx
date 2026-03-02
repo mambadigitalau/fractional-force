@@ -21,15 +21,27 @@ const Hero = () => {
               <a href="/contact" className="btn-primary">
                 Book a Conversation
               </a>
-              <button
-                onClick={() => setShowReel(true)}
-                className="flex items-center gap-3 text-primary-foreground/60 hover:text-accent font-medium transition-colors duration-200 py-4 group cursor-pointer"
-              >
-                <span className="w-12 h-12 rounded-full border-2 border-accent/60 group-hover:border-accent flex items-center justify-center transition-all duration-300 group-hover:bg-accent/10">
-                  <Play className="w-5 h-5 text-accent ml-0.5" />
+            </div>
+
+            {/* Showreel Preview */}
+            <div
+              className="mt-12 relative cursor-pointer group max-w-xl animate-fade-up"
+              style={{ animationDelay: "0.5s" }}
+              onClick={() => setShowReel(true)}
+            >
+              <img
+                src="https://img.youtube.com/vi/HuI8rTGwE3M/maxresdefault.jpg"
+                alt="Mamba Digital Showreel"
+                className="w-full aspect-video object-cover brightness-75 group-hover:brightness-90 transition-all duration-300"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="w-16 h-16 rounded-full bg-accent/90 group-hover:bg-accent flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg">
+                  <Play className="w-7 h-7 text-accent-foreground ml-1" />
                 </span>
+              </div>
+              <p className="absolute bottom-4 left-4 text-primary-foreground/60 text-sm font-heading font-medium tracking-wide uppercase">
                 Watch our showreel
-              </button>
+              </p>
             </div>
           </div>
         </div>
