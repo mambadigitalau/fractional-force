@@ -20,9 +20,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center">
           <img
-            src={scrolled ? mambamark : mambaLockupReverse}
+            src={mambaLockupReverse}
             alt="Mamba Digital"
-            className={`w-auto transition-all duration-300 ${scrolled ? "h-8 md:h-10" : "h-7 md:h-8"}`}
+            className="h-7 md:h-8 w-auto"
           />
         </Link>
 

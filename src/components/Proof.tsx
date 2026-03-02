@@ -68,24 +68,25 @@ const Proof = () => {
               href={cs.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block"
+              className="group relative block aspect-[3/4] overflow-hidden"
             >
-              <div className="relative aspect-[4/3] overflow-hidden mb-4">
-                <img
-                  src={cs.image}
-                  alt={cs.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+              <img
+                src={cs.image}
+                alt={cs.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
+                  {cs.tags}
+                </p>
+                <h3 className="font-heading text-xl md:text-2xl font-bold text-accent mb-2">
+                  {cs.title}
+                </h3>
+                <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                  {cs.desc}
+                </p>
               </div>
-              <p className="text-primary-foreground/40 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
-                {cs.tags}
-              </p>
-              <h3 className="font-heading text-lg md:text-xl font-bold text-accent mb-1">
-                {cs.title}
-              </h3>
-              <p className="text-primary-foreground/60 text-sm leading-relaxed">
-                {cs.desc}
-              </p>
             </a>
           ))}
         </div>
