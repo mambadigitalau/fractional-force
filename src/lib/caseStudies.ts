@@ -16,6 +16,17 @@ import gwgHero from "@/assets/cases/gwg-hero.png";
 import gwgSituation from "@/assets/cases/gwg-situation.png";
 import gwgFound from "@/assets/cases/gwg-found.png";
 import gwgResults from "@/assets/cases/gwg-results.png";
+import fboHero from "@/assets/cases/fbo-hero.png";
+import fboSituation from "@/assets/cases/fbo-situation.png";
+import fboFound from "@/assets/cases/fbo-found.png";
+import fboResults from "@/assets/cases/fbo-results.png";
+import wavesHero from "@/assets/cases/waves-hero.png";
+import wavesSituation from "@/assets/cases/waves-situation.png";
+import wavesFound from "@/assets/cases/waves-found.png";
+import wavesResults from "@/assets/cases/waves-results.png";
+import koeHero from "@/assets/cases/koe-hero.png";
+import koeSituation from "@/assets/cases/koe-situation.jpg";
+import koeResults from "@/assets/cases/koe-results.jpg";
 
 export type CaseStudy = {
   slug: string;
@@ -105,9 +116,53 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Email Marketing", "Paid Advertising"],
     desc: "No flows. No automation. No strategy. Now it's a $3M+ channel we built from scratch.",
     image: fboImg,
-    industry: "eCommerce / Supplements",
+    heroImage: fboHero,
+    sectionImages: {
+      afterSituation: fboSituation,
+      afterFound: fboFound,
+      afterDid: fboResults,
+    },
+    industry: "Health & Fitness",
     location: "Perth, WA",
-    website: "https://fatburnersonly.com.au/",
+    website: "https://www.fatburnersonly.com.au/",
+    sections: {
+      situation: [
+        "Fat Burners Only started the way a lot of good Australian businesses start. Two people, a garage, and a category they knew cold. By the time we got involved in early 2022, they'd grown from that garage into one of Australia's most recognised online supplement retailers. Thousands of five-star reviews. A loyal customer base built on genuine product knowledge and fast, reliable service.",
+        "But the marketing infrastructure hadn't kept pace with the business.",
+        "Meta ads were being managed internally. There was spend going out and revenue coming in, but no structured campaign architecture and no framework for scaling efficiently. Email marketing was running through Mailchimp with basic in-house execution. No automation. No behavioural flows. No segmentation beyond the basics. The largest revenue channel most eCommerce businesses have access to was essentially untouched.",
+        "The business was doing well despite its marketing, not because of it. That's a gap that gets more expensive every month you leave it open.",
+      ],
+      found: [
+        "Two channels with enormous headroom.",
+        "On the paid media side, budget was being deployed but without the architecture to make it work efficiently at scale. Ad sets weren't built around clear objectives or audience strategies. There was no structured approach to co-branded campaigns with supplement partners. Creative was functional but not systematic. The bones of a good operation were there. The engineering wasn't.",
+        "On email, the gap was even wider. Mailchimp was the wrong platform for a business at this scale and complexity. There were no automated flows. No welcome series. No abandoned cart recovery. No post-purchase sequences. No winback programs. For a business with a large, active customer database and high repeat-purchase potential, that's not a missed opportunity. That's leaving millions on the table.",
+      ],
+      did: [
+        {
+          heading: "Email: a complete rebuild.",
+          text: "We migrated the business from Mailchimp to Klaviyo and built the entire email program from scratch. Not a template job. A full architecture designed around how supplement customers actually buy. Welcome series. Abandoned cart recovery with multiple decision branches. Post-purchase flows tailored to product category and purchase behaviour. Winback sequences. Nurture content. Every flow built with multiple legs and splits based on what the customer bought, when they bought it, and what they were likely to need next.",
+        },
+        {
+          heading: "High-volume email campaigns.",
+          text: "We designed and executed 12 to 15 email campaigns per month. High volume, high pressure, high performance. Turnaround times were tight. Approval windows were short. The operation required a team that could produce broadcast-quality email creative on a schedule that would break most operators.",
+        },
+        {
+          heading: "Paid media: structure where there was none.",
+          text: "We rebuilt the Meta ads account around a campaign architecture that could scale. A major part of the account involved co-branded campaigns with supplement brands like EHP Labs, ATP Science, Switch Nutrition, and others. We built a system where every co-branded partnership had its own ad set with dedicated budget allocation, audience targeting, and performance benchmarks. Each one measured independently. Each one optimised on its own merits.",
+        },
+        {
+          heading: "Scaled the entire acquisition engine.",
+          text: "On top of the co-branded structure, we ran the business's own campaigns: evergreen product promotion, seasonal sales, and new customer acquisition. The entire account was engineered to scale spend without degrading efficiency. Dozens of concurrent ad sets, each with a clear purpose and measurable outcome.",
+        },
+      ],
+      results: [
+        "The paid media results exceeded every target the business set.",
+        "The internal benchmark was a 15x return on ad spend. We consistently delivered above 25x, with peaks above 35x. On a typical monthly spend of around $15,000, the account was generating hundreds of thousands in attributed revenue at a cost per purchase regularly under $10. During peak trading periods like Black Friday, we scaled spend significantly while maintaining efficiency. A single month's paid media activity generated nearly half a million dollars in revenue.",
+        "But the bigger story is email.",
+        "The channel we built from nothing now drives over half of the business's total revenue. On annual turnover in the mid-seven figures, that's well above $3 million per year flowing through an email program that didn't exist before we built it. Welcome flows, abandoned carts, post-purchase sequences, and campaigns working together as a system. Every dollar of that revenue traces back to infrastructure we designed, built, and continue to operate nearly four years later.",
+        "That's the difference between marketing that runs alongside a business and marketing that's woven into how it makes money. We didn't build a campaign. We built a channel. And it's still compounding.",
+      ],
+    },
     relatedSlugs: ["waves-au", "girls-with-gems"],
   },
   {
@@ -116,9 +171,51 @@ export const caseStudies: CaseStudy[] = [
     tags: ["eCommerce", "Email", "Paid Advertising"],
     desc: "Garage to eight figures. Through a market collapse. We're still there.",
     image: wavesImg,
-    industry: "eCommerce / Fashion",
+    heroImage: wavesHero,
+    sectionImages: {
+      afterSituation: wavesSituation,
+      afterFound: wavesFound,
+      afterDid: wavesResults,
+    },
+    industry: "Fashion",
     location: "Perth, WA",
-    website: "https://wavesau.com/",
+    website: "https://www.wavesau.com.au/",
+    sections: {
+      situation: [
+        "In May 2020, Waves AU was a sneaker resale operation running out of a garage. George Kozma had built a genuine following in the sneaker community through product knowledge, relationships, and the ability to get his hands on stock that nobody else could find. The business was turning over six figures. All of it driven by word of mouth, social credibility, and hustle.",
+        "There was no website worth mentioning. No paid media. No email list. No marketing infrastructure of any kind. Orders were being processed manually. The brand existed almost entirely through George's personal reputation and his presence in the community.",
+        "And the timing was extraordinary. The pandemic was pushing consumer behaviour online faster than anyone predicted. Sneaker culture was entering a mainstream boom. Resale was becoming a legitimate retail category. The opportunity in front of Waves wasn't incremental. It was exponential. But capturing it required everything the business didn't have yet: a real eCommerce platform, a customer acquisition engine, a retention strategy, and someone making the strategic calls about where to invest and when to scale.",
+        "This wasn't a business that needed its marketing optimised. It needed a marketing function built from the ground up.",
+      ],
+      found: [
+        "A blank canvas. No legacy systems to work around, no bad habits to unlearn, and no inflated expectations about what marketing could do overnight. But also no attribution, no customer data, no automation, no retention strategy, and no scalable acquisition model.",
+        "The opportunity was enormous. The pandemic was accelerating eCommerce adoption. Sneaker culture was exploding. But capitalising on that required building every layer of the digital operation simultaneously: the store, the email engine, the paid media architecture, the analytics. And it required someone to make strategic decisions about where to invest, when to scale, and what to prioritise. Waves didn't need a marketing agency. It needed a CMO. We became one, without ever holding the title.",
+      ],
+      did: [
+        {
+          heading: "Built the entire digital operation.",
+          text: "Shopify store. Designed, launched, and rebuilt multiple times as the business evolved. Each iteration reflected changes in product mix, customer behaviour, and market conditions. What worked for a sneaker resale business in 2020 looked nothing like what worked for a multi-category retailer in 2025.",
+        },
+        {
+          heading: "Built the retention engine from zero.",
+          text: "Klaviyo email program. Flows, campaigns, segmentation, lifecycle automation. From zero to a full retention engine that turned one-time buyers into repeat customers and generated revenue on days when no ad was running.",
+        },
+        {
+          heading: "Ran paid media across Meta and Google.",
+          text: "Full-funnel campaign architecture. At peak, we achieved ROAS figures above 70x. Even now, after fundamental shifts in the market, the system consistently delivers around 25x. We've had individual months exceed $1.5 million in revenue.",
+        },
+        {
+          heading: "Navigated the market collapse.",
+          text: "The sneaker resale market didn't just cool off. It collapsed. We saw it coming and diversified. Waves moved into adjacent categories before the floor fell out. Pop Mart and Labubu became a massive play. Over 20,000 units sold. Rhode was at Waves before the brand was even available in Australian retail. Over 7,500 units moved. Each of these wasn't just a product decision. It was a strategic call about timing, inventory risk, marketing investment, and audience expansion.",
+        },
+      ],
+      results: [
+        "From a garage to eight-figure annual revenue. Two consecutive years above $10 million. Over 100,000 orders processed. A brand that survived an industry collapse that bankrupted competitors.",
+        "But the numbers only tell half the story. What actually happened is that a one-person operation became a real business with a real marketing function, a real customer base, and the strategic capability to navigate markets that were fundamentally reshaping underneath it.",
+        "Sneaker resale boomed, and Waves scaled with it. Sneaker resale collapsed, and Waves pivoted ahead of it. New categories emerged, and Waves was first to market. Through all of it, the same team was setting the strategy and running the execution. No handoffs. No gaps between the plan and the work.",
+        "Five years in, we're still there. That's not a campaign. That's a partnership.",
+      ],
+    },
     relatedSlugs: ["fat-burners-only", "girls-with-gems"],
   },
   {
@@ -127,9 +224,49 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Paid Advertising", "Strategy"],
     desc: "Regional touring, tourism targeting, and a #1 album. Not your typical ad account.",
     image: koeImg,
-    industry: "Tourism & Entertainment",
+    heroImage: koeHero,
+    sectionImages: {
+      afterSituation: koeSituation,
+      afterDid: koeResults,
+    },
+    industry: "Tourism & Events",
     location: "Katherine, NT",
-    website: "https://katherineoutbackexperience.com.au/",
+    website: "https://www.katherineoutbackexperience.com.au/",
+    sections: {
+      situation: [
+        "Tom Curtain is a multiple Golden Guitar winning country musician, horseman, and the owner of Katherine Outback Experience. Australia's Best Tourist Attraction. Not a shortlist. The winner. Three times at the national Qantas Australian Tourism Awards (2021, 2023, 2024).",
+        "The business has two distinct operations. From April to October, Katherine Outback Experience runs as a permanent show in Katherine, NT. Real horse training, working dog demonstrations, live music, bush stories. From October to April, Tom takes the entire operation on the road. Horses, dogs, musicians, crew. A national tour hitting 50 to 70 towns across Queensland, New South Wales, Victoria, South Australia, Western Australia, and the Northern Territory. Not capital cities. Regional towns. Places like Rankins Springs, Cudal, Amphitheatre, Pinaroo. Towns that most touring acts skip entirely.",
+        "When Mamba came on board in late 2020, Tom had built an incredible product and a loyal following. The shows were good. The audience existed. But the marketing was largely organic. Word of mouth, local press, social media without paid amplification. For an operation touring dozens of regional towns every season, that approach has a ceiling. And Tom was hitting it.",
+        "The challenge wasn't awareness in the abstract. Tom Curtain is a known name in country music and regional Australia. The challenge was converting that into tickets sold in specific towns on specific dates, weeks in advance, in places where the total addressable audience within driving distance might be measured in the low thousands.",
+      ],
+      found: [
+        "This wasn't a standard digital marketing problem. There's no evergreen funnel that works the same in Tamworth as it does in Warracknabeal. Every show is its own product, in its own market, with its own audience size, its own timing, and its own logistics.",
+        "Three distinct advertising challenges, each requiring a different strategic approach.",
+        "The national tour. Fifty to seventy individual shows per season, each in a different town, each needing its own campaign with location-specific creative and geo-targeted delivery. Most of these towns are small. The targetable audience within an 80km radius might be a few thousand people. That means frequency management becomes critical.",
+        "The Katherine home show. The permanent attraction runs during the dry season and the audience is tourists, not locals. Katherine's resident population is around 6,000. The people you need to reach are planning a trip to the Top End. They're in Sydney, Melbourne, Brisbane, Perth. The targeting problem is essentially inverted.",
+        "Music promotion. A newer addition to the scope. Tom is a recording artist with six studio albums, and promoting music through paid channels is a fundamentally different exercise to promoting live events.",
+      ],
+      did: [
+        {
+          heading: "Tour advertising across 50-70 towns per season.",
+          text: "Each show gets its own campaign built around location targeting with a radius calibrated to the size of the town. Small town, wider radius. People out bush will drive an hour or more for a good show. Creative diversity isn't a nice-to-have. In small towns where the same few thousand people are seeing your ads repeatedly, it's the difference between building anticipation and building annoyance.",
+        },
+        {
+          heading: "Katherine home show — inverted targeting.",
+          text: "Completely different targeting strategy. Rather than geo-targeting around a venue, we're identifying and reaching people in the trip-planning phase for Northern Territory travel. People researching Top End holidays, people who've shown interest in outback tourism, people in major capital cities during the months when Katherine visitation peaks. The ad itself isn't selling a show. It's selling a reason to include Katherine on the itinerary.",
+        },
+        {
+          heading: "Drove a #1 album launch.",
+          text: "In 2025, we added album promotion to the scope with the release of Tom's sixth studio album, \"Here's To You.\" Paid media strategy designed to drive streams, awareness, and chart performance in the window around release. The album debuted at number one on the ARIA Top 20 Australian Country Albums Chart and number one on the AIR Independent Albums Chart.",
+        },
+      ],
+      results: [
+        "Five touring seasons. The shows are fundamentally bigger than when we started. What were once modest regional gatherings now regularly draw hundreds of attendees, with larger shows exceeding a thousand guests. More shows per tour. More towns on the schedule.",
+        "The growth in tour scale is a direct result of the paid media engine making it commercially viable to add dates in towns that wouldn't have justified the logistics cost of showing up before. The advertising doesn't just promote the business. It expands the territory.",
+        "The numbers are strong. Across multiple tours, we've maintained a cost per ticket sold that keeps every show commercially viable and a return on ad spend that justifies the investment at scale. On an annual paid media investment that runs into six figures, the touring operation generates multiples of that in ticket revenue.",
+        "Different problems. Same discipline. Understand the audience. Build the right structure. Choose the right creative. Measure what matters. Five years in, we're still here.",
+      ],
+    },
     relatedSlugs: ["mjb-seminars", "nurture-early-learning"],
   },
   {
@@ -164,11 +301,11 @@ export const caseStudies: CaseStudy[] = [
         },
         {
           heading: "Built and managed the organic social media presence.",
-          text: "Before any centre opened, Mamba built Nurture's social media from nothing. The accounts, the content, the community engagement. All designed to establish trust and awareness in the local market ahead of launch. Once the centres were open, children were enrolled, and internal staff were in place, we trained the Nurture team and handed organic social over to them. That was always the plan. Build it properly, set the standard, then hand it to the people who are actually in the centres every day.",
+          text: "Before any centre opened, Mamba built Nurture's social media from nothing. The accounts, the content, the community engagement. All designed to establish trust and awareness in the local market ahead of launch. Once the centres were open, children were enrolled, and internal staff were in place, we trained the Nurture team and handed organic social over to them.",
         },
         {
           heading: "Ran all paid advertising from pre-launch through to today.",
-          text: "Meta ads from day one. A mix of lead generation campaigns and traffic campaigns driving to the website. The creative work is where the value sits in childcare advertising. Parents need confidence and information before they will book a tour. Every ad has to answer the questions that are already running through their head: is it safe, who are the educators, what will my child actually do there, is it worth the cost. We also ran open day campaigns for centre launches. One open day saw roughly 30 family groups come through in a single session, with around half signing up on the spot.",
+          text: "Meta ads from day one. A mix of lead generation campaigns and traffic campaigns driving to the website. Parents need confidence and information before they will book a tour. Every ad has to answer the questions that are already running through their head: is it safe, who are the educators, what will my child actually do there, is it worth the cost. One open day saw roughly 30 family groups come through in a single session, with around half signing up on the spot.",
         },
         {
           heading: "Managed the full conversion path.",
