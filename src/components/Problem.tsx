@@ -46,19 +46,19 @@ const Problem = () => {
 
   return (
     <section id="problem" className="section-light relative overflow-hidden">
-      {/* Left brand mark */}
+      {/* Top-left brand mark — oversized, only corner visible */}
       <img
         src={mambaMark}
         alt=""
         aria-hidden="true"
-        className="absolute -left-20 top-1/2 -translate-y-1/2 w-64 md:w-80 opacity-[0.04] pointer-events-none select-none"
+        className="absolute -top-40 -left-40 md:-top-52 md:-left-52 w-[28rem] md:w-[40rem] opacity-[0.07] pointer-events-none select-none"
       />
-      {/* Right brand mark */}
+      {/* Bottom-right brand mark — oversized, only corner visible */}
       <img
         src={mambaMark}
         alt=""
         aria-hidden="true"
-        className="absolute -right-20 top-1/2 -translate-y-1/2 w-64 md:w-80 opacity-[0.04] pointer-events-none select-none -scale-x-100"
+        className="absolute -bottom-40 -right-40 md:-bottom-52 md:-right-52 w-[28rem] md:w-[40rem] opacity-[0.07] pointer-events-none select-none"
       />
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
