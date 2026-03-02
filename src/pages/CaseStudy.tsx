@@ -29,7 +29,9 @@ const CaseStudy = () => {
     return <Navigate to="/work" replace />;
   }
 
-  const related = cs.relatedSlugs ? getRelatedStudies(cs.relatedSlugs) : [];
+  const related = cs.relatedSlugs
+    ? getRelatedStudies(cs.relatedSlugs).filter((r) => r.slug !== slug)
+    : [];
   const heroImg = cs.heroImage || cs.image;
 
   return (
@@ -165,42 +167,37 @@ const CaseStudy = () => {
 
       {/* RELATED PROJECTS */}
       {related.length > 0 && (
-        <section className="section-light">
-          <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <section className="section-dark">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
             <h2 className="headline mb-10 md:mb-14">Related projects.</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {related.map((r, i) => {
-                const inner = (
-                  <>
-                    <img
-                      src={r.image}
-                      alt={r.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col justify-end h-[55%]">
-                      <p className="text-white/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
-                        {r.tags.join(", ")}
-                      </p>
-                      <h3 className="font-heading font-bold text-accent text-xl md:text-2xl mb-2">
-                        {r.title}
-                      </h3>
-                      <p className="text-white/80 text-sm leading-relaxed line-clamp-2">
-                        {r.desc}
-                      </p>
-                    </div>
-                  </>
-                );
-                return r.sections ? (
-                  <Link key={i} to={`/work/${r.slug}`} className="group relative block aspect-[3/4] overflow-hidden">
-                    {inner}
-                  </Link>
-                ) : (
-                  <div key={i} className="group relative block aspect-[3/4] overflow-hidden opacity-60">
-                    {inner}
+              {related.map((r) => (
+                <Link
+                  key={r.slug}
+                  to={`/work/${r.slug}`}
+                  className="group relative block aspect-[3/4] overflow-hidden"
+                >
+                  <img
+                    src={r.image}
+                    alt={r.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col justify-end h-[55%]">
+                    <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
+                      {r.tags.join(", ")}
+                    </p>
+                    <h3 className={`font-heading font-bold text-accent mb-2 ${
+                      r.title.length > 20 ? "text-lg md:text-xl" : "text-xl md:text-2xl"
+                    }`}>
+                      {r.title}
+                    </h3>
+                    <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">
+                      {r.desc}
+                    </p>
                   </div>
-                );
-              })}
+                </Link>
+              ))}
             </div>
           </div>
         </section>
