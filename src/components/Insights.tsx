@@ -46,7 +46,7 @@ const posts = [
 const Insights = () => {
   return (
     <section className="section-light">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16 gap-6">
           <h2 className="headline">Latest insights.</h2>
           <a

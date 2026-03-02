@@ -53,40 +53,39 @@ const caseStudies = [
 const Proof = () => {
   return (
     <section id="work" className="section-dark">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16 gap-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14 gap-6">
           <h2 className="headline">Businesses we've grown.</h2>
           <a href="#" className="btn-primary self-start md:self-auto">
             All Case Studies
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
           {caseStudies.map((cs, i) => (
             <a
               key={i}
               href={cs.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative block aspect-[3/4] overflow-hidden"
+              className="group block"
             >
-              <img
-                src={cs.image}
-                alt={cs.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
-                  {cs.tags}
-                </p>
-                <h3 className="font-heading text-xl md:text-2xl font-bold text-accent mb-2">
-                  {cs.title}
-                </h3>
-                <p className="text-primary-foreground/70 text-sm leading-relaxed">
-                  {cs.desc}
-                </p>
+              <div className="relative aspect-[4/3] overflow-hidden mb-4">
+                <img
+                  src={cs.image}
+                  alt={cs.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
+              <p className="text-primary-foreground/40 text-xs font-heading font-semibold tracking-wider uppercase mb-2 min-h-[1rem]">
+                {cs.tags}
+              </p>
+              <h3 className="font-heading text-lg md:text-xl font-bold text-accent mb-1 min-h-[1.75rem]">
+                {cs.title}
+              </h3>
+              <p className="text-primary-foreground/80 text-sm leading-relaxed">
+                {cs.desc}
+              </p>
             </a>
           ))}
         </div>
