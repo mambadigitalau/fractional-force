@@ -1,7 +1,7 @@
 const WhoWeWorkWith = () => {
   return (
     <section className="section-dark">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-36">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
         <div className="max-w-3xl">
           <h2 className="headline mb-10">
             Built for businesses growing faster than their marketing.
