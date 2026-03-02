@@ -4,20 +4,43 @@ import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
 import { getCaseStudy, getRelatedStudies } from "@/lib/caseStudies";
 
-const SectionImage = ({ src, alt }: { src: string; alt: string }) => (
-  <section className="section-dark">
-    <div className="max-w-7xl mx-auto px-6 md:px-10">
-      <div className="w-full aspect-[16/9] md:aspect-[2.2/1] overflow-hidden">
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
+const SectionImage = ({ src, alt, variant = "default" }: { src: string; alt: string; variant?: "default" | "bleed" | "offset" }) => {
+  if (variant === "bleed") {
+    return (
+      <section className="section-dark">
+        <div className="w-full aspect-[16/9] md:aspect-[2.4/1] overflow-hidden">
+          <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </section>
+    );
+  }
+
+  if (variant === "offset") {
+    return (
+      <section className="section-dark">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-12 gap-0">
+            <div className="col-span-12 md:col-start-2 md:col-span-11 aspect-[16/9] md:aspect-[2.2/1] overflow-hidden border border-accent/20">
+              <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="section-dark">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="p-[1px] bg-gradient-to-br from-accent/30 via-transparent to-accent/10">
+          <div className="w-full aspect-[16/9] md:aspect-[2.2/1] overflow-hidden">
+            <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -34,9 +57,9 @@ const CaseStudy = () => {
     <>
       <Navbar />
 
-      {/* HERO IMAGE */}
+      {/* HERO IMAGE — full bleed, cinematic */}
       <section className="section-dark pt-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 pt-12 md:pt-20">
+        <div className="pt-12 md:pt-20">
           <div className="w-full aspect-[16/7] overflow-hidden">
             <img
               src={heroImg}
@@ -97,7 +120,7 @@ const CaseStudy = () => {
 
       {/* IMAGE BREAK — after situation */}
       {cs.sectionImages?.afterSituation && (
-        <SectionImage src={cs.sectionImages.afterSituation} alt={`${cs.title} — seminar in action`} />
+        <SectionImage src={cs.sectionImages.afterSituation} alt={`${cs.title} — seminar in action`} variant="bleed" />
       )}
 
       {/* WHAT WE FOUND */}
@@ -116,7 +139,7 @@ const CaseStudy = () => {
 
       {/* IMAGE BREAK — after found */}
       {cs.sectionImages?.afterFound && (
-        <SectionImage src={cs.sectionImages.afterFound} alt={`${cs.title} — behind the scenes`} />
+        <SectionImage src={cs.sectionImages.afterFound} alt={`${cs.title} — behind the scenes`} variant="offset" />
       )}
 
       {/* WHAT WE DID */}
