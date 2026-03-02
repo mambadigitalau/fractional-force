@@ -33,7 +33,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="section-dark">
+    <section id="services" className="section-light">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-36">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-20 gap-6">
           <h2 className="headline">What we do.</h2>
@@ -47,18 +47,18 @@ const Services = () => {
             <a
               key={i}
               href="#"
-              className="group flex items-center gap-6 md:gap-10 py-7 md:py-9 border-t border-primary-foreground/15 last:border-b hover:pl-4 transition-all duration-300"
+              className="group flex items-center gap-6 md:gap-10 py-7 md:py-9 border-t border-border last:border-b hover:pl-4 transition-all duration-300"
             >
               <span className="text-accent font-heading text-sm font-semibold w-8 shrink-0">
                 {s.num}
               </span>
-              <h3 className="font-heading text-2xl md:text-4xl font-bold text-primary-foreground group-hover:text-accent transition-colors duration-300 flex-1">
+              <h3 className="font-heading text-2xl md:text-4xl font-bold text-foreground group-hover:text-accent transition-colors duration-300 flex-1">
                 {s.title}
               </h3>
-              <p className="hidden md:block text-primary-foreground/50 text-base max-w-xs group-hover:text-primary-foreground/70 transition-colors duration-300">
+              <p className="hidden md:block text-muted-foreground text-base max-w-xs group-hover:text-foreground/70 transition-colors duration-300">
                 {s.desc}
               </p>
-              <span className="text-primary-foreground/30 group-hover:text-accent text-2xl transition-all duration-300 group-hover:translate-x-1">
+              <span className="text-muted-foreground/30 group-hover:text-accent text-2xl transition-all duration-300 group-hover:translate-x-1">
                 &#8594;
               </span>
             </a>
