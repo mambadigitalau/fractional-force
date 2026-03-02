@@ -77,7 +77,7 @@ const Proof = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col justify-end h-[55%]">
                 <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
                   {cs.tags}
                 </p>
@@ -86,7 +86,7 @@ const Proof = () => {
                 }`}>
                   {cs.title}
                 </h3>
-                <p className="text-primary-foreground/80 text-sm leading-relaxed">
+                <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">
                   {cs.desc}
                 </p>
               </div>
