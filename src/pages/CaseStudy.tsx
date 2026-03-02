@@ -1,8 +1,23 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
 import { getCaseStudy, getRelatedStudies } from "@/lib/caseStudies";
+
+const SectionImage = ({ src, alt }: { src: string; alt: string }) => (
+  <section className="section-dark">
+    <div className="max-w-7xl mx-auto px-6 md:px-10">
+      <div className="w-full aspect-[16/9] md:aspect-[2.2/1] overflow-hidden">
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+);
 
 const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -13,6 +28,7 @@ const CaseStudy = () => {
   }
 
   const related = cs.relatedSlugs ? getRelatedStudies(cs.relatedSlugs) : [];
+  const heroImg = cs.heroImage || cs.image;
 
   return (
     <>
@@ -23,7 +39,7 @@ const CaseStudy = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-10 pt-12 md:pt-20">
           <div className="w-full aspect-[16/7] overflow-hidden">
             <img
-              src={cs.image}
+              src={heroImg}
               alt={cs.title}
               className="w-full h-full object-cover"
             />
@@ -79,6 +95,11 @@ const CaseStudy = () => {
         </div>
       </section>
 
+      {/* IMAGE BREAK — after situation */}
+      {cs.sectionImages?.afterSituation && (
+        <SectionImage src={cs.sectionImages.afterSituation} alt={`${cs.title} — seminar in action`} />
+      )}
+
       {/* WHAT WE FOUND */}
       <section className="section-dark">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
@@ -92,6 +113,11 @@ const CaseStudy = () => {
           </div>
         </div>
       </section>
+
+      {/* IMAGE BREAK — after found */}
+      {cs.sectionImages?.afterFound && (
+        <SectionImage src={cs.sectionImages.afterFound} alt={`${cs.title} — behind the scenes`} />
+      )}
 
       {/* WHAT WE DID */}
       <section className="section-light">
@@ -116,6 +142,11 @@ const CaseStudy = () => {
         </div>
       </section>
 
+      {/* IMAGE BREAK — after did */}
+      {cs.sectionImages?.afterDid && (
+        <SectionImage src={cs.sectionImages.afterDid} alt={`${cs.title} — the results`} />
+      )}
+
       {/* RESULTS */}
       <section className="section-dark">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
@@ -136,31 +167,38 @@ const CaseStudy = () => {
           <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
             <h2 className="headline mb-10 md:mb-14">Related projects.</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {related.map((r, i) => (
-                <a
-                  key={i}
-                  href={r.sections ? `/work/${r.slug}` : "#"}
-                  className="group relative block aspect-[3/4] overflow-hidden"
-                >
-                  <img
-                    src={r.image}
-                    alt={r.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col justify-end h-[55%]">
-                    <p className="text-white/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
-                      {r.tags.join(", ")}
-                    </p>
-                    <h3 className="font-heading font-bold text-accent text-xl md:text-2xl mb-2">
-                      {r.title}
-                    </h3>
-                    <p className="text-white/80 text-sm leading-relaxed line-clamp-2">
-                      {r.desc}
-                    </p>
+              {related.map((r, i) => {
+                const inner = (
+                  <>
+                    <img
+                      src={r.image}
+                      alt={r.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col justify-end h-[55%]">
+                      <p className="text-white/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
+                        {r.tags.join(", ")}
+                      </p>
+                      <h3 className="font-heading font-bold text-accent text-xl md:text-2xl mb-2">
+                        {r.title}
+                      </h3>
+                      <p className="text-white/80 text-sm leading-relaxed line-clamp-2">
+                        {r.desc}
+                      </p>
+                    </div>
+                  </>
+                );
+                return r.sections ? (
+                  <Link key={i} to={`/work/${r.slug}`} className="group relative block aspect-[3/4] overflow-hidden">
+                    {inner}
+                  </Link>
+                ) : (
+                  <div key={i} className="group relative block aspect-[3/4] overflow-hidden opacity-60">
+                    {inner}
                   </div>
-                </a>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
