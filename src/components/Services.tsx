@@ -1,4 +1,4 @@
-import mambaLogotype from "@/assets/mamba-logotype-green.jpg";
+import mambaPattern from "@/assets/mamba-pattern.png";
 
 const services = [
   {
@@ -35,23 +35,28 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="section-light relative overflow-hidden">
-      {/* Background monogram */}
-      <img
-        src={mambaLogotype}
-        alt=""
-        aria-hidden="true"
-        className="absolute -right-20 top-1/2 -translate-y-1/2 w-[600px] md:w-[800px] opacity-[0.04] pointer-events-none select-none"
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16 gap-6">
-          <h2 className="headline">What we do.</h2>
+    <section id="services" className="section-light">
+      {/* Pattern header */}
+      <div
+        className="relative overflow-hidden py-16 md:py-20 px-6 md:px-10"
+        style={{
+          backgroundImage: `url(${mambaPattern})`,
+          backgroundSize: "800px",
+          backgroundRepeat: "repeat",
+        }}
+      >
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-6 relative z-10">
+          <h2 className="font-heading font-bold tracking-tight leading-[1.05] text-primary-foreground" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            What we do.
+          </h2>
           <a href="/contact" className="btn-primary self-start md:self-auto">
             Work with us
           </a>
         </div>
+      </div>
 
+      {/* Service list */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16">
         <div className="space-y-0">
           {services.map((s, i) => (
             <a
