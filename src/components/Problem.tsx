@@ -72,7 +72,7 @@ const Problem = () => {
         >
           <p
             className="font-heading font-bold tracking-tight leading-[1.15] text-foreground"
-            style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)" }}
+            style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)" }}
           >
             {visibleLine1}
             {charIndex <= line1.length && showCursor && (
@@ -82,7 +82,7 @@ const Problem = () => {
           {visibleLine2 && (
             <p
               className="font-heading font-bold tracking-tight leading-[1.15] text-accent mt-2"
-              style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)" }}
+              style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)" }}
             >
               {visibleLine2}
               {showCursor && charIndex > line1.length && (
