@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import mambaLockupReverse from "@/assets/mamba-lockup-reverse.png";
-import mambamark from "@/assets/mamba-mark.png";
 
-const navItems = ["Services", "About", "Work", "Insights", "Contact"];
+const navItems = [
+  { label: "Services", href: "/services" },
+  { label: "Work", href: "/work" },
+  { label: "About", href: "/about" },
+  { label: "Insights", href: "/insights" },
+  { label: "Contact", href: "/contact" },
+];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,17 +34,17 @@ const Navbar = () => {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+            <Link
+              key={item.label}
+              to={item.href}
               className="text-primary-foreground hover:text-accent text-lg font-heading font-semibold tracking-wide transition-colors duration-200"
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
-          <a href="/contact" className="btn-primary text-sm py-3 px-6">
+          <Link to="/contact" className="btn-primary text-sm py-3 px-6">
             Book a Conversation
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -61,18 +66,18 @@ const Navbar = () => {
         <div className="md:hidden bg-primary border-t border-primary-foreground/10 animate-fade-in">
           <div className="px-6 py-8 flex flex-col gap-6">
             {navItems.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+              <Link
+                key={item.label}
+                to={item.href}
                 onClick={() => setMobileOpen(false)}
                 className="text-primary-foreground hover:text-accent text-lg font-heading font-semibold tracking-wide transition-colors"
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
-            <a href="/contact" className="btn-primary text-center mt-2">
+            <Link to="/contact" className="btn-primary text-center mt-2" onClick={() => setMobileOpen(false)}>
               Book a Conversation
-            </a>
+            </Link>
           </div>
         </div>
       )}
