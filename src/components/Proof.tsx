@@ -61,12 +61,20 @@ const Proof = () => {
           </a>
         </div>
 
-        {/* Grid with gaps and divider lines */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6">
+        {/* Boxed grid with vertical and horizontal lines */}
+        <div className="border border-primary-foreground/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((cs, i) => {
+            const col = i % 3;
             const row = Math.floor(i / 3);
             return (
-              <div key={i} className={row > 0 ? "pt-6 border-t border-primary-foreground/15" : ""}>
+              <div
+                key={i}
+                className={`p-3 ${
+                  row > 0 ? "border-t border-primary-foreground/15" : ""
+                } ${col > 0 ? "lg:border-l border-primary-foreground/15" : ""} ${
+                  col === 1 ? "sm:border-l" : ""
+                }`}
+              >
                 <a
                   href={cs.link}
                   target="_blank"
