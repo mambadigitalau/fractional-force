@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import mambaMark from "@/assets/mamba-mark.png";
+
 const line1 = "You don't need more marketing.";
 const line2 = "You need to understand the marketing you've already got.";
 
@@ -45,22 +45,8 @@ const Problem = () => {
   const showCursor = started && charIndex < totalChars;
 
   return (
-    <section id="problem" className="section-light relative overflow-hidden">
-      {/* Top-left brand mark */}
-      <img
-        src={mambaMark}
-        alt=""
-        aria-hidden="true"
-        className="absolute -top-16 -left-16 md:-top-20 md:-left-20 w-[20rem] md:w-[28rem] opacity-[0.06] pointer-events-none select-none"
-      />
-      {/* Bottom-right brand mark */}
-      <img
-        src={mambaMark}
-        alt=""
-        aria-hidden="true"
-        className="absolute -bottom-16 -right-16 md:-bottom-20 md:-right-20 w-[20rem] md:w-[28rem] opacity-[0.06] pointer-events-none select-none"
-      />
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20 relative z-10">
+    <section id="problem" className="section-light">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="headline mb-8">
             Confusion is expensive. Clarity pays for itself.
