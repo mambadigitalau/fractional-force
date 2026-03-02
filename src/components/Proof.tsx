@@ -61,44 +61,40 @@ const Proof = () => {
           </a>
         </div>
 
-        {/* Hopscotch grid with vertical and horizontal lines */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Grid with gaps and divider lines */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6">
           {caseStudies.map((cs, i) => {
-            const col = i % 3;
             const row = Math.floor(i / 3);
             return (
-              <a
-                key={i}
-                href={cs.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group relative block aspect-[3/4] overflow-hidden ${
-                  row > 0 ? "border-t border-primary-foreground/15" : ""
-                } ${col > 0 ? "lg:border-l border-primary-foreground/15" : ""} ${
-                  col === 1 && col > 0 ? "sm:border-l" : ""
-                } ${row > 0 && col === 0 ? "sm:border-t" : ""}`}
-              >
-                <img
-                  src={cs.image}
-                  alt={cs.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                {/* Simple dark overlay at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+              <div key={i} className={row > 0 ? "pt-6 border-t border-primary-foreground/15" : ""}>
+                <a
+                  href={cs.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block aspect-[3/4] overflow-hidden"
+                >
+                  <img
+                    src={cs.image}
+                    alt={cs.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
-                {/* Content anchored to bottom with fixed heights */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase h-4">
-                    {cs.tags}
-                  </p>
-                  <h3 className="font-heading text-xl md:text-2xl font-bold text-accent mt-2 h-[3.5rem] md:h-[4rem] flex items-start">
-                    {cs.title}
-                  </h3>
-                  <p className="text-primary-foreground/80 text-sm leading-relaxed mt-1">
-                    {cs.desc}
-                  </p>
-                </div>
-              </a>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                    <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
+                      {cs.tags}
+                    </p>
+                    <h3 className={`font-heading font-bold text-accent mb-2 ${
+                      cs.title.length > 20 ? "text-lg md:text-xl" : "text-xl md:text-2xl"
+                    }`}>
+                      {cs.title}
+                    </h3>
+                    <p className="text-primary-foreground/80 text-sm leading-relaxed">
+                      {cs.desc}
+                    </p>
+                  </div>
+                </a>
+              </div>
             );
           })}
         </div>
