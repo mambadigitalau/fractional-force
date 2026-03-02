@@ -1,15 +1,23 @@
+import { Link } from "react-router-dom";
 import mambaLockupReverse from "@/assets/mamba-lockup-reverse.png";
 
 const serviceLinks = [
-  "Fractional CMO",
-  "Paid Advertising",
-  "Strategy & Consulting",
-  "Content & Creative",
-  "Email Marketing",
-  "eCommerce",
+  { label: "Fractional CMO", href: "/services/fractional-cmo" },
+  { label: "Strategy & Consulting", href: "/services/strategy-consulting" },
+  { label: "Paid Advertising", href: "/services/paid-advertising" },
+  { label: "Email Marketing", href: "/services/email-marketing" },
+  { label: "Content & Creative", href: "/services/content-creative" },
+  { label: "eCommerce", href: "/services/ecommerce" },
 ];
 
-const navLinks = ["Home", "Services", "Work", "About", "Insights", "Contact"];
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Work", href: "/work" },
+  { label: "About", href: "/about" },
+  { label: "Insights", href: "/insights" },
+  { label: "Contact", href: "/contact" },
+];
 
 const partners = [
   "Google Partner",
@@ -18,7 +26,11 @@ const partners = [
   "Klaviyo Master Partner",
 ];
 
-const socials = ["Instagram", "LinkedIn", "Facebook", "YouTube"];
+const socials = [
+  { label: "Instagram", href: "https://instagram.com/mambadigital.au" },
+  { label: "LinkedIn", href: "https://linkedin.com/company/mamba-digital" },
+  { label: "Facebook", href: "https://facebook.com/mambadigital.au" },
+];
 
 const Footer = () => {
   return (
@@ -27,7 +39,13 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 md:gap-16 mb-16">
           {/* Left */}
           <div>
-            <img src={mambaLockupReverse} alt="Mamba Digital" className="h-8 md:h-10 w-auto mb-4" />
+            <Link to="/">
+              <img
+                src={mambaLockupReverse}
+                alt="Mamba Digital"
+                className="h-8 md:h-10 w-auto mb-4"
+              />
+            </Link>
             <p className="text-sm text-primary-foreground/60 leading-relaxed mb-2">
               Strategic marketing consultancy. Subiaco, Perth.
             </p>
@@ -46,10 +64,13 @@ const Footer = () => {
             </p>
             <ul className="space-y-2">
               {serviceLinks.map((s) => (
-                <li key={s}>
-                  <a href="#" className="text-sm text-primary-foreground/60 hover:text-accent transition-colors">
-                    {s}
-                  </a>
+                <li key={s.label}>
+                  <Link
+                    to={s.href}
+                    className="text-sm text-primary-foreground/60 hover:text-accent transition-colors"
+                  >
+                    {s.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -62,10 +83,13 @@ const Footer = () => {
             </p>
             <ul className="space-y-2">
               {navLinks.map((n) => (
-                <li key={n}>
-                  <a href="#" className="text-sm text-primary-foreground/60 hover:text-accent transition-colors">
-                    {n}
-                  </a>
+                <li key={n.label}>
+                  <Link
+                    to={n.href}
+                    className="text-sm text-primary-foreground/60 hover:text-accent transition-colors"
+                  >
+                    {n.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -75,7 +99,10 @@ const Footer = () => {
         {/* Partner badges */}
         <div className="flex flex-wrap gap-4 mb-10">
           {partners.map((p) => (
-            <span key={p} className="text-xs text-primary-foreground/40 tracking-wide">
+            <span
+              key={p}
+              className="text-xs text-primary-foreground/40 tracking-wide"
+            >
               {p}
             </span>
           ))}
@@ -89,11 +116,13 @@ const Footer = () => {
           <div className="flex gap-6">
             {socials.map((s) => (
               <a
-                key={s}
-                href="#"
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-xs text-primary-foreground/40 hover:text-accent transition-colors"
               >
-                {s}
+                {s.label}
               </a>
             ))}
           </div>
