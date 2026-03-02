@@ -23,7 +23,7 @@ const Navbar = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="text-primary-foreground/70 hover:text-primary-foreground text-sm font-medium tracking-wide transition-colors duration-200"
+              className="text-primary-foreground hover:text-accent text-base font-medium tracking-wide transition-colors duration-200"
             >
               {item}
             </a>
@@ -56,7 +56,7 @@ const Navbar = () => {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setMobileOpen(false)}
-                className="text-primary-foreground/70 hover:text-primary-foreground text-lg font-medium tracking-wide transition-colors"
+                className="text-primary-foreground hover:text-accent text-lg font-medium tracking-wide transition-colors"
               >
                 {item}
               </a>

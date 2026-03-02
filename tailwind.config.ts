@@ -84,6 +84,10 @@ export default {
           from: { opacity: "0", transform: "translateY(30px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "logo-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
         "fade-in": {
           from: { opacity: "0" },
           to: { opacity: "1" },
@@ -94,6 +98,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.8s ease-out forwards",
         "fade-in": "fade-in 0.6s ease-out forwards",
+        "logo-scroll": "logo-scroll 30s linear infinite",
       },
     },
   },
