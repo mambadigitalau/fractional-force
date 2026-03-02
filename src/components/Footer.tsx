@@ -1,4 +1,4 @@
-import mambaLockup from "@/assets/mamba-lockup.png";
+import mambaLockupReverse from "@/assets/mamba-lockup-reverse.png";
 
 const serviceLinks = [
   "Fractional CMO",
@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 md:gap-16 mb-16">
           {/* Left */}
           <div>
-            <img src={mambaLockup} alt="Mamba Digital" className="h-8 md:h-10 w-auto mb-4" />
+            <img src={mambaLockupReverse} alt="Mamba Digital" className="h-8 md:h-10 w-auto mb-4" />
             <p className="text-sm text-primary-foreground/60 leading-relaxed mb-2">
               Strategic marketing consultancy. Subiaco, Perth.
             </p>

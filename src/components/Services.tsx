@@ -1,4 +1,4 @@
-import mambaLogotype from "@/assets/mamba-logotype-green.jpg";
+import mambamark from "@/assets/mamba-mark.png";
 
 const services = [
   {
@@ -35,18 +35,13 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="section-light relative overflow-hidden">
-      {/* Background monogram - only behind header area */}
-      <img
-        src={mambaLogotype}
-        alt=""
-        aria-hidden="true"
-        className="absolute -right-20 top-1/2 -translate-y-1/2 w-[600px] md:w-[800px] opacity-[0.04] pointer-events-none select-none"
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16 gap-6">
-          <h2 className="headline">What we do.</h2>
+    <section id="services" className="section-light">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14 gap-6">
+          <div className="flex items-center gap-4 md:gap-6">
+            <img src={mambamark} alt="" aria-hidden="true" className="h-10 md:h-14 w-auto opacity-20" />
+            <h2 className="headline">What we do.</h2>
+          </div>
           <a href="/contact" className="btn-primary self-start md:self-auto">
             Work with us
           </a>
@@ -57,7 +52,7 @@ const Services = () => {
             <a
               key={i}
               href="#"
-              className="group flex items-center gap-4 md:gap-6 py-5 md:py-7 border-t border-border last:border-b hover:pl-3 transition-all duration-300"
+              className="group flex items-center gap-4 md:gap-6 py-4 md:py-6 border-t border-border last:border-b hover:pl-3 transition-all duration-300"
             >
               <span className="text-accent font-heading text-sm font-semibold w-8 shrink-0">
                 {s.num}
