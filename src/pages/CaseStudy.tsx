@@ -6,14 +6,14 @@ import { getCaseStudy, getRelatedStudies } from "@/lib/caseStudies";
 
 const SectionImage = ({ src, alt, direction = "bl" }: { src: string; alt: string; direction?: "bl" | "tr" }) => {
   const offsetClasses = direction === "bl"
-    ? "-left-3 -bottom-3 md:-left-5 md:-bottom-5"
-    : "-right-3 -top-3 md:-right-5 md:-top-5";
+    ? "-left-2 -bottom-2 md:-left-3 md:-bottom-3"
+    : "-right-2 -top-2 md:-right-3 md:-top-3";
 
   return (
     <section className="section-dark">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 md:py-8">
         <div className="relative">
-          <div className={`absolute ${offsetClasses} w-full h-full border-[3px] border-accent`} />
+          <div className={`absolute ${offsetClasses} w-full h-full bg-accent`} />
           <div className="relative overflow-hidden">
             <img src={src} alt={alt} className="w-full h-auto block" loading="lazy" />
           </div>
@@ -42,7 +42,7 @@ const CaseStudy = () => {
       <section className="section-dark pt-20">
         <div className="max-w-7xl mx-auto px-6 md:px-10 pt-12 md:pt-20">
           <div className="relative">
-            <div className="absolute -left-3 -bottom-3 md:-left-5 md:-bottom-5 w-full h-full border-[3px] border-accent" />
+            <div className="absolute -left-2 -bottom-2 md:-left-3 md:-bottom-3 w-full h-full bg-accent" />
             <div className="relative overflow-hidden">
               <img
                 src={heroImg}
