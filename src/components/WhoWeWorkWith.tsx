@@ -8,7 +8,7 @@ const WhoWeWorkWith = () => {
     <>
       <section className="section-dark">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 md:gap-16 items-center">
             {/* Left — Text */}
             <div>
               <h2 className="headline mb-10">
@@ -28,7 +28,7 @@ const WhoWeWorkWith = () => {
             </div>
 
             {/* Right — Showreel */}
-            <div>
+            <div className="w-full md:w-72 lg:w-80">
               <h3 className="font-heading font-semibold text-primary-foreground/50 text-sm tracking-[0.15em] uppercase mb-4">
                 Watch our showreel
               </h3>
