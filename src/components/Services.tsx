@@ -7,6 +7,7 @@ const services = [
     title: "Fractional CMO",
     desc: "Part-time marketing leadership that actually answers for results.",
     num: "01",
+    href: "/services/fractional-cmo",
   },
   {
     title: "Strategy & Consulting",
@@ -65,7 +66,7 @@ const Services = () => {
             {services.map((s, i) => (
               <a
                 key={i}
-                href="#"
+                href={s.href || "#"}
                 className="group flex items-center gap-4 md:gap-6 py-4 md:py-6 border-t border-border last:border-b hover:pl-3 transition-all duration-300"
               >
                 <span className="text-accent font-heading text-sm font-semibold w-8 shrink-0">
