@@ -20,17 +20,17 @@ const Pillars = () => {
   return (
     <section className="section-dark">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
-        <h2 className="headline mb-16 md:mb-20">What makes this different.</h2>
+        <h2 className="headline mb-10 md:mb-14">What makes this different.</h2>
         <div className="space-y-0">
           {pillars.map((pillar, i) => (
             <div
               key={i}
-              className="flex items-start gap-6 md:gap-10 py-8 md:py-10 border-t border-primary-foreground/10 last:border-b"
+              className="flex items-start gap-6 md:gap-10 py-6 md:py-8 border-t border-primary-foreground/10 last:border-b"
             >
               <span className="text-accent font-heading text-sm font-semibold w-8 shrink-0 pt-1">
                 {pillar.num}
               </span>
-              <div className="flex-1 grid md:grid-cols-2 gap-4 md:gap-12">
+              <div className="flex-1 grid md:grid-cols-[1fr_1.5fr] gap-4 md:gap-12">
                 <h3 className="font-heading text-2xl md:text-3xl font-bold text-accent">
                   {pillar.title}
                 </h3>
