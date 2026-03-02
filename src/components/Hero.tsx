@@ -8,7 +8,20 @@ const Hero = () => {
   return (
     <>
       <section className="section-dark min-h-screen flex items-center pt-20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-32">
+        {/* Background video — muted ambient loop */}
+        <div className="absolute inset-0 z-0">
+          <iframe
+            src="https://www.youtube.com/embed/HuI8rTGwE3M?autoplay=1&mute=1&loop=1&playlist=HuI8rTGwE3M&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1"
+            title="Background showreel"
+            allow="autoplay; encrypted-media"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] md:w-[120%] aspect-video pointer-events-none"
+            style={{ minHeight: "100%", minWidth: "100%" }}
+          />
+          {/* Dark overlay to keep text readable */}
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-32 relative z-10">
           <div className="max-w-4xl">
             <h1 className="headline-lg mb-8 md:mb-10 animate-fade-up">
               You're not bad at marketing.{" "}
@@ -21,30 +34,16 @@ const Hero = () => {
               <a href="/contact" className="btn-primary">
                 Book a Conversation
               </a>
+              <button
+                onClick={() => setShowReel(true)}
+                className="flex items-center gap-3 text-primary-foreground/60 hover:text-accent font-medium transition-colors duration-200 py-4 group cursor-pointer"
+              >
+                <span className="w-10 h-10 rounded-full border border-primary-foreground/30 group-hover:border-accent flex items-center justify-center transition-all duration-300">
+                  <Play className="w-4 h-4 text-primary-foreground/60 group-hover:text-accent ml-0.5" />
+                </span>
+                Watch with sound
+              </button>
             </div>
-          </div>
-        </div>
-
-        {/* Floating showreel preview — bottom right */}
-        <div
-          className="hidden md:block absolute bottom-10 right-10 cursor-pointer group animate-fade-up"
-          style={{ animationDelay: "0.6s" }}
-          onClick={() => setShowReel(true)}
-        >
-          <div className="relative w-56 lg:w-64 overflow-hidden shadow-2xl">
-            <img
-              src="https://img.youtube.com/vi/HuI8rTGwE3M/maxresdefault.jpg"
-              alt="Mamba Digital Showreel"
-              className="w-full aspect-video object-cover brightness-[0.4] group-hover:brightness-[0.6] transition-all duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="w-11 h-11 rounded-full border-2 border-accent bg-accent/10 group-hover:bg-accent/25 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                <Play className="w-4 h-4 text-accent ml-0.5" />
-              </span>
-            </div>
-            <p className="absolute bottom-2.5 left-3 text-primary-foreground/40 text-[10px] font-heading font-semibold tracking-[0.15em] uppercase">
-              Showreel
-            </p>
           </div>
         </div>
       </section>
