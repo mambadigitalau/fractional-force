@@ -108,7 +108,7 @@ export const caseStudies: CaseStudy[] = [
         "Mamba has been with MJB since June 2024. What started as paid media became something broader. The kind of engagement where you are building the strategy, creating the flagship product, directing the brand, and running the campaigns. All under one roof.",
       ],
     },
-    relatedSlugs: ["nurture-early-learning", "fat-burners-only"],
+    relatedSlugs: ["nurture-early-learning", "fat-burners-only", "waves-au"],
   },
   {
     slug: "fat-burners-only",
@@ -163,7 +163,7 @@ export const caseStudies: CaseStudy[] = [
         "That's the difference between marketing that runs alongside a business and marketing that's woven into how it makes money. We didn't build a campaign. We built a channel. And it's still compounding.",
       ],
     },
-    relatedSlugs: ["waves-au", "girls-with-gems"],
+    relatedSlugs: ["waves-au", "girls-with-gems", "katherine-outback-experience"],
   },
   {
     slug: "waves-au",
@@ -216,7 +216,7 @@ export const caseStudies: CaseStudy[] = [
         "Five years in, we're still there. That's not a campaign. That's a partnership.",
       ],
     },
-    relatedSlugs: ["fat-burners-only", "girls-with-gems"],
+    relatedSlugs: ["fat-burners-only", "girls-with-gems", "mjb-seminars"],
   },
   {
     slug: "katherine-outback-experience",
@@ -267,7 +267,7 @@ export const caseStudies: CaseStudy[] = [
         "Different problems. Same discipline. Understand the audience. Build the right structure. Choose the right creative. Measure what matters. Five years in, we're still here.",
       ],
     },
-    relatedSlugs: ["mjb-seminars", "nurture-early-learning"],
+    relatedSlugs: ["mjb-seminars", "nurture-early-learning", "waves-au"],
   },
   {
     slug: "nurture-early-learning",
@@ -319,7 +319,7 @@ export const caseStudies: CaseStudy[] = [
         "Mamba has been with Nurture since before the first centre opened its doors. From brand development and organic social through to the paid media that continues to fill rooms today. One of those engagements where the scope is whatever the business needs it to be.",
       ],
     },
-    relatedSlugs: ["mjb-seminars", "katherine-outback-experience"],
+    relatedSlugs: ["mjb-seminars", "katherine-outback-experience", "fat-burners-only"],
   },
   {
     slug: "girls-with-gems",
@@ -368,7 +368,7 @@ export const caseStudies: CaseStudy[] = [
         "That's what happens when you treat eCommerce advertising as a financial discipline, not a creative one. The creative was already world-class. We gave it a commercial engine that matched.",
       ],
     },
-    relatedSlugs: ["fat-burners-only", "waves-au"],
+    relatedSlugs: ["fat-burners-only", "waves-au", "nurture-early-learning"],
   },
 ];
 

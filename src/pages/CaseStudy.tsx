@@ -167,7 +167,7 @@ const CaseStudy = () => {
 
       {/* RELATED PROJECTS */}
       {related.length > 0 && (
-        <section className="section-dark">
+         <section className="section-light">
           <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
             <h2 className="headline mb-10 md:mb-14">Related projects.</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
