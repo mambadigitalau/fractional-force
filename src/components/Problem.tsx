@@ -1,5 +1,3 @@
-import problemVisual from "@/assets/problem-visual.jpg";
-
 const Problem = () => {
   return (
     <section id="problem" className="section-light">
@@ -9,28 +7,22 @@ const Problem = () => {
             <h2 className="headline mb-10">
               Confusion is expensive. Clarity pays for itself.
             </h2>
-            <div className="body-lg text-muted-foreground space-y-6 mb-14">
-              <p>
-                The ads are running. Content's going out. Someone's managing something on at least three platforms. There are dashboards.
-              </p>
-              <p>
-                Ask what's actually working and watch the room fill with jargon designed to sound like an answer.
-              </p>
-              <p>
-                That's not a marketing problem. That's a leadership gap. And every month it stays open, assumptions harden into habits and bad data shapes your next decisions.
-              </p>
-            </div>
+            <p className="body-lg text-muted-foreground mb-10">
+              The ads are running. Content's going out. Dashboards everywhere. Ask what's actually working and watch the room fill with jargon designed to sound like an answer.
+            </p>
             <p className="pull-quote text-foreground">
               You don't need more marketing. You need to understand the marketing you've already got.
             </p>
           </div>
-          <div className="relative">
-            <img
-              src={problemVisual}
-              alt="Strategic clarity in marketing"
-              className="w-full h-auto aspect-[3/4] object-cover"
+          <div className="relative aspect-[3/4] overflow-hidden">
+            <video
+              src="https://mambadigital.au/wp-content/uploads/2024/03/Home-Page-GIF.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
           </div>
         </div>
       </div>

@@ -22,14 +22,14 @@ const logos = [
 
 const LogoScroller = () => {
   return (
-    <section className="section-dark py-12 md:py-16 overflow-hidden border-t border-primary-foreground/10">
-      <p className="text-center text-primary-foreground/40 text-xs font-heading font-semibold tracking-[0.2em] uppercase mb-8">
+    <section className="bg-white py-12 md:py-16 overflow-hidden">
+      <p className="text-center text-muted-foreground text-xs font-heading font-semibold tracking-[0.2em] uppercase mb-8">
         Trusted by leading companies
       </p>
       <div className="relative">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-primary to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-primary to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
 
         <div className="flex animate-logo-scroll">
           {[...logos, ...logos].map((logo, i) => (
@@ -40,7 +40,7 @@ const LogoScroller = () => {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="h-10 md:h-14 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
+                className="h-10 md:h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           ))}
