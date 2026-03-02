@@ -4,6 +4,10 @@ import koeImg from "@/assets/cases/koe.jpg";
 import nurtureImg from "@/assets/cases/nurture.jpg";
 import mjbImg from "@/assets/cases/mjb.png";
 import gwgImg from "@/assets/cases/gwg.jpg";
+import mjbHero from "@/assets/cases/mjb-hero.png";
+import mjbSituation from "@/assets/cases/mjb-situation.jpg";
+import mjbFound from "@/assets/cases/mjb-found.jpg";
+import mjbResults from "@/assets/cases/mjb-results.jpg";
 
 export type CaseStudy = {
   slug: string;
@@ -15,6 +19,12 @@ export type CaseStudy = {
   industry: string;
   location: string;
   website?: string;
+  heroImage?: string;
+  sectionImages?: {
+    afterSituation?: string;
+    afterFound?: string;
+    afterDid?: string;
+  };
   sections?: {
     situation: string[];
     found: string[];
@@ -31,6 +41,12 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Paid Advertising", "Strategy"],
     desc: "Zero to 437,000 followers. 1.7 million likes. For a business without a personal brand 12 months ago.",
     image: mjbImg,
+    heroImage: mjbHero,
+    sectionImages: {
+      afterSituation: mjbSituation,
+      afterFound: mjbFound,
+      afterDid: mjbResults,
+    },
     industry: "Education & Events",
     location: "Perth, WA",
     website: "https://mjbseminars.com/",
