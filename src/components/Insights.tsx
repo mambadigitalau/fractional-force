@@ -59,14 +59,16 @@ const Insights = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-0">
           {posts.map((post, i) => (
             <a
               key={i}
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block"
+              className={`group block ${
+                i >= 3 ? "border-t border-border pt-6 mt-6" : ""
+              }`}
             >
               <div className="relative aspect-[16/9] overflow-hidden mb-4">
                 <img
