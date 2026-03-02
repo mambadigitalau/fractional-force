@@ -5,6 +5,7 @@ import Problem from "@/components/Problem";
 import Pillars from "@/components/Pillars";
 import Services from "@/components/Services";
 import Proof from "@/components/Proof";
+import Insights from "@/components/Insights";
 import WhoWeWorkWith from "@/components/WhoWeWorkWith";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -17,8 +18,9 @@ const Index = () => {
       <LogoScroller />
       <Services />
       <Proof />
-      <Pillars />
       <Problem />
+      <Pillars />
+      <Insights />
       <WhoWeWorkWith />
       <FinalCTA />
       <Footer />
