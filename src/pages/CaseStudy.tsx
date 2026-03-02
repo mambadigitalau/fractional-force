@@ -14,8 +14,8 @@ const SectionImage = ({ src, alt, direction = "bl" }: { src: string; alt: string
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 md:py-8">
         <div className="relative">
           <div className={`absolute ${offsetClasses} w-full h-full bg-accent`} />
-          <div className="relative aspect-[16/9] md:aspect-[2.2/1] overflow-hidden">
-            <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
+          <div className="relative overflow-hidden">
+            <img src={src} alt={alt} className="w-full h-auto block" loading="lazy" />
           </div>
         </div>
       </div>
@@ -43,11 +43,11 @@ const CaseStudy = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-10 pt-12 md:pt-20">
           <div className="relative">
             <div className="absolute -left-3 -bottom-3 md:-left-5 md:-bottom-5 w-full h-full bg-accent" />
-            <div className="relative aspect-[16/9] overflow-hidden">
+            <div className="relative overflow-hidden">
               <img
                 src={heroImg}
                 alt={cs.title}
-                className="w-full h-full object-cover"
+                className="w-full h-auto block"
               />
             </div>
           </div>
