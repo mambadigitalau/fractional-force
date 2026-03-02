@@ -5,22 +5,15 @@ import FinalCTA from "@/components/FinalCTA";
 import { getCaseStudy, getRelatedStudies } from "@/lib/caseStudies";
 
 const SectionImage = ({ src, alt, variant = "default" }: { src: string; alt: string; variant?: "default" | "bleed" | "offset" }) => {
+  // BLEED — full-width image with a thick accent top-border acting as a colour "bar"
   if (variant === "bleed") {
     return (
       <section className="section-dark">
-        <div className="w-full aspect-[16/9] md:aspect-[2.4/1] overflow-hidden">
-          <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
-        </div>
-      </section>
-    );
-  }
-
-  if (variant === "offset") {
-    return (
-      <section className="section-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-12 gap-0">
-            <div className="col-span-12 md:col-start-2 md:col-span-11 aspect-[16/9] md:aspect-[2.2/1] overflow-hidden border border-accent/20">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 md:py-8">
+          <div className="relative">
+            {/* Accent bar — sits behind the image, peeking out left & bottom */}
+            <div className="absolute -left-3 -bottom-3 md:-left-5 md:-bottom-5 w-full h-full bg-accent" />
+            <div className="relative aspect-[16/9] md:aspect-[2.2/1] overflow-hidden">
               <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
@@ -29,11 +22,32 @@ const SectionImage = ({ src, alt, variant = "default" }: { src: string; alt: str
     );
   }
 
+  // OFFSET — asymmetric: image pushed right with a tall accent stripe on the left
+  if (variant === "offset") {
+    return (
+      <section className="section-dark">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 md:py-8">
+          <div className="grid grid-cols-12 gap-0">
+            <div className="hidden md:flex col-span-1 items-stretch">
+              <div className="w-[3px] bg-accent h-full" />
+            </div>
+            <div className="col-span-12 md:col-span-11 aspect-[16/9] md:aspect-[2.2/1] overflow-hidden">
+              <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // DEFAULT — "matted frame" with accent border on two edges (top + right)
   return (
     <section className="section-dark">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <div className="p-[1px] bg-gradient-to-br from-accent/30 via-transparent to-accent/10">
-          <div className="w-full aspect-[16/9] md:aspect-[2.2/1] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 md:py-8">
+        <div className="relative">
+          {/* Accent corner frame — top-right */}
+          <div className="absolute -top-3 -right-3 md:-top-5 md:-right-5 w-full h-full border-t-[3px] border-r-[3px] border-accent" />
+          <div className="relative aspect-[16/9] md:aspect-[2.2/1] overflow-hidden">
             <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
