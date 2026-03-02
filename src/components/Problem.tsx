@@ -1,19 +1,48 @@
 import { useEffect, useRef, useState } from "react";
 
+const line1 = "You don't need more marketing.";
+const line2 = "You need to understand the marketing you've already got.";
+
 const Problem = () => {
   const quoteRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [started, setStarted] = useState(false);
+  const [charIndex, setCharIndex] = useState(0);
+
+  const fullText = line1 + "\n" + line2;
+  const totalChars = fullText.length;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
+        if (entry.isIntersecting && !started) {
+          setStarted(true);
+        }
       },
-      { threshold: 0.5 }
+      { threshold: 0.6 }
     );
     if (quoteRef.current) observer.observe(quoteRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [started]);
+
+  useEffect(() => {
+    if (!started) return;
+    if (charIndex >= totalChars) return;
+    const timeout = setTimeout(() => {
+      setCharIndex((prev) => prev + 1);
+    }, 35);
+    return () => clearTimeout(timeout);
+  }, [started, charIndex, totalChars]);
+
+  const visibleText = fullText.slice(0, charIndex);
+  const [visibleLine1, visibleLine2] = (() => {
+    const splitPoint = line1.length;
+    if (charIndex <= splitPoint) {
+      return [visibleText, ""];
+    }
+    return [line1, fullText.slice(splitPoint + 1, charIndex)];
+  })();
+
+  const showCursor = started && charIndex < totalChars;
 
   return (
     <section id="problem" className="section-light">
@@ -36,29 +65,34 @@ const Problem = () => {
           </div>
         </div>
 
-        {/* Animated pull quote */}
-        <div ref={quoteRef} className="max-w-5xl mx-auto text-center py-10 border-t border-b border-border overflow-hidden">
+        {/* Typewriter pull quote */}
+        <div
+          ref={quoteRef}
+          className="max-w-5xl mx-auto text-center py-10 border-t border-b border-border min-h-[10rem] md:min-h-[8rem] flex flex-col items-center justify-center"
+        >
           <p
-            className="font-heading font-bold tracking-tight leading-[1.1] text-foreground transition-all duration-700 ease-out"
-            style={{
-              fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(30px)",
-            }}
+            className="font-heading font-bold tracking-tight leading-[1.15] text-foreground"
+            style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)" }}
           >
-            You don't need more marketing.
+            {visibleLine1}
+            {charIndex <= line1.length && showCursor && (
+              <span className="inline-block w-[3px] h-[1em] bg-accent ml-1 align-middle animate-[pulse_0.8s_ease-in-out_infinite]" />
+            )}
           </p>
-          <p
-            className="font-heading font-bold tracking-tight leading-[1.1] text-accent mt-2 transition-all duration-700 ease-out delay-300"
-            style={{
-              fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(30px)",
-              transitionDelay: "300ms",
-            }}
-          >
-            You need to understand the marketing you've already got.
-          </p>
+          {visibleLine2 && (
+            <p
+              className="font-heading font-bold tracking-tight leading-[1.15] text-accent mt-2"
+              style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)" }}
+            >
+              {visibleLine2}
+              {showCursor && charIndex > line1.length && (
+                <span className="inline-block w-[3px] h-[1em] bg-accent ml-1 align-middle animate-[pulse_0.8s_ease-in-out_infinite]" />
+              )}
+            </p>
+          )}
+          {!started && (
+            <span className="inline-block w-[3px] h-8 bg-accent animate-[pulse_0.8s_ease-in-out_infinite]" />
+          )}
         </div>
       </div>
     </section>
