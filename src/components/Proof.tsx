@@ -61,39 +61,46 @@ const Proof = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-0">
-          {caseStudies.map((cs, i) => (
-            <a
-              key={i}
-              href={cs.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group relative block aspect-[3/4] overflow-hidden ${
-                i >= 3 ? "border-t border-primary-foreground/10 pt-6 mt-6" : ""
-              }`}
-            >
-              <img
-                src={cs.image}
-                alt={cs.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              {/* Dark green tinted overlay for legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
+        {/* Hopscotch grid with vertical and horizontal lines */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {caseStudies.map((cs, i) => {
+            const col = i % 3;
+            const row = Math.floor(i / 3);
+            return (
+              <a
+                key={i}
+                href={cs.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group relative block aspect-[3/4] overflow-hidden ${
+                  row > 0 ? "border-t border-primary-foreground/15" : ""
+                } ${col > 0 ? "lg:border-l border-primary-foreground/15" : ""} ${
+                  col === 1 && col > 0 ? "sm:border-l" : ""
+                } ${row > 0 && col === 0 ? "sm:border-t" : ""}`}
+              >
+                <img
+                  src={cs.image}
+                  alt={cs.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Simple dark overlay at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
-              {/* Content pinned to bottom with consistent structure */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col">
-                <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
-                  {cs.tags}
-                </p>
-                <h3 className="font-heading text-xl md:text-2xl font-bold text-accent mb-2 line-clamp-2">
-                  {cs.title}
-                </h3>
-                <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-3">
-                  {cs.desc}
-                </p>
-              </div>
-            </a>
-          ))}
+                {/* Content anchored to bottom with fixed heights */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase h-4">
+                    {cs.tags}
+                  </p>
+                  <h3 className="font-heading text-xl md:text-2xl font-bold text-accent mt-2 h-[3.5rem] md:h-[4rem] flex items-start">
+                    {cs.title}
+                  </h3>
+                  <p className="text-primary-foreground/80 text-sm leading-relaxed mt-1">
+                    {cs.desc}
+                  </p>
+                </div>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -59,33 +59,39 @@ const Insights = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-0">
-          {posts.map((post, i) => (
-            <a
-              key={i}
-              href={post.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group block ${
-                i >= 3 ? "border-t border-border pt-6 mt-6" : ""
-              }`}
-            >
-              <div className="relative aspect-[16/9] overflow-hidden mb-4">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <p className="text-muted-foreground text-xs font-heading font-semibold tracking-wider uppercase mb-2">
-                {post.date} &middot; {post.tags}
-              </p>
-              <h3 className="font-heading text-base md:text-lg font-bold text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
-                {post.title}
-              </h3>
-            </a>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post, i) => {
+            const col = i % 3;
+            const row = Math.floor(i / 3);
+            return (
+              <a
+                key={i}
+                href={post.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group block p-4 md:p-5 ${
+                  row > 0 ? "border-t border-border" : ""
+                } ${col > 0 ? "lg:border-l border-border" : ""} ${
+                  col === 1 ? "sm:border-l" : ""
+                }`}
+              >
+                <div className="relative aspect-[16/9] overflow-hidden mb-4">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <p className="text-muted-foreground text-xs font-heading font-semibold tracking-wider uppercase mb-2">
+                  {post.date} &middot; {post.tags}
+                </p>
+                <h3 className="font-heading text-base md:text-lg font-bold text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
+                  {post.title}
+                </h3>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
