@@ -1,3 +1,6 @@
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useState } from "react";
+
 const posts = [
   {
     title: "AI Agents for Business in 2026: They're Not Assistants. They're Employees.",
@@ -43,7 +46,54 @@ const posts = [
   },
 ];
 
+const PostCard = ({ post, bordered }: { post: (typeof posts)[number]; bordered?: { row: number; col: number } }) => (
+  <a
+    href={post.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`group block p-4 md:p-5 ${
+      bordered
+        ? `${bordered.row > 0 ? "border-t border-border" : ""} ${bordered.col > 0 ? "lg:border-l border-border" : ""} ${bordered.col === 1 ? "sm:border-l" : ""}`
+        : ""
+    }`}
+  >
+    <div className="relative aspect-[16/9] overflow-hidden mb-4">
+      <img
+        src={post.image}
+        alt={post.title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
+    </div>
+    <p className="text-muted-foreground text-xs font-heading font-semibold tracking-wider uppercase mb-2">
+      {post.date} &middot; {post.tags}
+    </p>
+    <h3 className="font-heading text-base md:text-lg font-bold text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
+      {post.title}
+    </h3>
+  </a>
+);
+
 const Insights = () => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    containScroll: false,
+    slidesToScroll: 1,
+  });
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi, onSelect]);
+
   return (
     <section className="section-light">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
@@ -59,39 +109,48 @@ const Insights = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, i) => {
-            const col = i % 3;
-            const row = Math.floor(i / 3);
-            return (
-              <a
-                key={i}
-                href={post.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group block p-4 md:p-5 ${
-                  row > 0 ? "border-t border-border" : ""
-                } ${col > 0 ? "lg:border-l border-border" : ""} ${
-                  col === 1 ? "sm:border-l" : ""
-                }`}
-              >
-                <div className="relative aspect-[16/9] overflow-hidden mb-4">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
+        {/* Desktop grid */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post, i) => (
+            <PostCard
+              key={i}
+              post={post}
+              bordered={{ row: Math.floor(i / 3), col: i % 3 }}
+            />
+          ))}
+        </div>
+
+        {/* Mobile carousel with peek */}
+        <div className="sm:hidden">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-3">
+              {posts.map((post, i) => (
+                <div
+                  key={i}
+                  className="min-w-0 shrink-0"
+                  style={{ flexBasis: "85%" }}
+                >
+                  <PostCard post={post} />
                 </div>
-                <p className="text-muted-foreground text-xs font-heading font-semibold tracking-wider uppercase mb-2">
-                  {post.date} &middot; {post.tags}
-                </p>
-                <h3 className="font-heading text-base md:text-lg font-bold text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
-                  {post.title}
-                </h3>
-              </a>
-            );
-          })}
+              ))}
+            </div>
+          </div>
+
+          {/* Dot indicators */}
+          <div className="flex justify-center gap-1.5 mt-5">
+            {posts.map((_, i) => (
+              <button
+                key={i}
+                aria-label={`Go to slide ${i + 1}`}
+                onClick={() => emblaApi?.scrollTo(i)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === selectedIndex
+                    ? "w-6 bg-accent"
+                    : "w-1.5 bg-foreground/20"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
