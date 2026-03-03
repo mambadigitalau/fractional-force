@@ -44,8 +44,7 @@ const Services = () => {
       <section id="services" className="section-light">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14 gap-6">
-            <div className="flex items-center gap-4 md:gap-6">
-              <img src={mambamark} alt="" aria-hidden="true" className="h-10 md:h-14 w-auto opacity-20" />
+            <div>
               <h2 className="headline">What we do.</h2>
             </div>
             <div className="flex items-center gap-4 self-start md:self-auto">
