@@ -7,7 +7,7 @@ import fboImg from "@/assets/cases/fbo.jpg";
 import koeImg from "@/assets/cases/koe.jpg";
 import nurtureImg from "@/assets/cases/nurture.jpg";
 import mjbImg from "@/assets/cases/mjb.png";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
@@ -229,7 +229,7 @@ const FractionalCMO = () => {
       {/* WHAT IS A FRACTIONAL CMO */}
       <section className="section-dark">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div>
               <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">What is a fractional CMO?</h2>
               <div className="space-y-4 body-lg text-primary-foreground/70">
@@ -248,7 +248,7 @@ const FractionalCMO = () => {
               <img
                 src={fcmo1}
                 alt="Marketing leadership in Perth"
-                className="w-full aspect-[4/5] object-cover"
+                className="w-full aspect-[4/5] object-cover max-h-[500px]"
               />
             </div>
           </div>
@@ -298,9 +298,9 @@ const FractionalCMO = () => {
       {/* HOW MAMBA IS DIFFERENT */}
       <section className="section-dark">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div>
-              <img src={fcmo6} alt="Strategy and delivery" className="w-full aspect-[4/5] object-cover" />
+              <img src={fcmo6} alt="Strategy and delivery" className="w-full aspect-[4/5] object-cover max-h-[500px]" />
             </div>
             <div>
               <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">Strategy and delivery. One team.</h2>
@@ -387,7 +387,7 @@ const FractionalCMO = () => {
       {/* WHO THIS IS FOR — restructured: text left with both sections, image right */}
       <section className="section-light">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-start">
             <div>
               <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">Who this is for.</h2>
               <div className="space-y-4">
@@ -416,7 +416,7 @@ const FractionalCMO = () => {
               </div>
             </div>
             <div>
-              <img src={fcmo6} alt="Marketing leadership" className="w-full aspect-[4/5] object-cover" />
+              <img src={fcmo6} alt="Marketing leadership" className="w-full aspect-[4/5] object-cover max-h-[500px]" />
             </div>
           </div>
         </div>
@@ -465,9 +465,9 @@ const FractionalCMO = () => {
       {/* WHY TOBY */}
       <section className="section-light">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div>
-              <img src={fcmo2} alt="Toby — Mamba Digital" className="w-full aspect-[4/5] object-cover" />
+              <img src={fcmo2} alt="Toby — Mamba Digital" className="w-full aspect-[4/5] object-cover max-h-[500px]" />
             </div>
             <div>
               <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">
@@ -498,7 +498,45 @@ const FractionalCMO = () => {
               All Case Studies
             </a>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* Mobile/Tablet carousel */}
+          <div className="lg:hidden">
+            <div className="overflow-x-auto scrollbar-hide -mx-6 px-6" style={{ scrollSnapType: "x mandatory" }}>
+              <div className="flex gap-4" style={{ width: "max-content" }}>
+                {relatedCaseStudies.map((cs, i) => (
+                  <a
+                    key={i}
+                    href={cs.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative block aspect-[3/4] overflow-hidden shrink-0"
+                    style={{ width: "calc((100vw - 48px - 16px) / 2.15)", scrollSnapAlign: "start" }}
+                  >
+                    <img
+                      src={cs.image}
+                      alt={cs.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col justify-end h-[55%]">
+                      <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
+                        {cs.tags}
+                      </p>
+                      <h3 className={`font-heading font-bold text-accent mb-2 ${
+                        cs.title.length > 20 ? "text-base" : "text-lg"
+                      }`}>
+                        {cs.title}
+                      </h3>
+                      <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">
+                        {cs.desc}
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* Desktop grid */}
+          <div className="hidden lg:grid grid-cols-4 gap-5">
             {relatedCaseStudies.map((cs, i) => (
               <a
                 key={i}
