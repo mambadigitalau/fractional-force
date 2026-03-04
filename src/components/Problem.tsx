@@ -49,7 +49,7 @@ const Problem = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="headline mb-8">
-            Confusion is expensive. Clarity pays for itself.
+            Confusion is expensive.<br />Clarity pays for itself.
           </h2>
 
           <div className="space-y-5 mb-14">
