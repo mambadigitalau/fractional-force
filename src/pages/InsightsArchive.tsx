@@ -133,9 +133,9 @@ const InsightsArchive = () => {
               <a
                 key={i}
                 href={post.slug}
-                className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-8 py-8 md:py-10 border-t border-border last:border-b"
+                className="group flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-8 md:py-10 border-t border-border last:border-b"
               >
-                <span className="text-accent font-heading text-sm font-semibold w-10 shrink-0">
+                <span className="text-accent font-heading text-sm font-semibold w-10 shrink-0 md:pt-1">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="flex-1 min-w-0">
@@ -148,16 +148,18 @@ const InsightsArchive = () => {
                       {post.date}
                     </span>
                   </div>
-                  <h3 className="font-heading font-bold text-xl md:text-2xl lg:text-3xl text-foreground group-hover:text-accent transition-colors duration-300 leading-tight mb-2">
-                    {post.title}
-                  </h3>
+                  <div className="flex items-start gap-4">
+                    <h3 className="font-heading font-bold text-xl md:text-2xl lg:text-3xl text-foreground group-hover:text-accent transition-colors duration-300 leading-tight mb-2 flex-1 min-w-0">
+                      {post.title}
+                    </h3>
+                    <span className="text-muted-foreground/30 group-hover:text-accent text-2xl transition-all duration-300 group-hover:translate-x-1 shrink-0 mt-0.5">
+                      &#8594;
+                    </span>
+                  </div>
                   <p className="text-muted-foreground text-base leading-relaxed max-w-2xl hidden md:block">
                     {post.excerpt}
                   </p>
                 </div>
-                <span className="text-muted-foreground/30 group-hover:text-accent text-2xl transition-all duration-300 group-hover:translate-x-1 shrink-0">
-                  &#8594;
-                </span>
               </a>
             ))}
           </div>
