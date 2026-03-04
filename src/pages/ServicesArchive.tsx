@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -46,6 +48,35 @@ const executionServices = [
     href: "/services/ecommerce",
   },
 ];
+
+const MobileServiceDropdown = ({ services }: { services: typeof strategicServices }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="sm:hidden py-2">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-4 py-3 border border-border text-sm font-heading font-semibold text-muted-foreground hover:text-foreground transition-colors duration-200"
+      >
+        <span>Browse Services</span>
+        <ChevronDown className={`size-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="border-x border-b border-border animate-fade-in">
+          {services.map((s) => (
+            <Link
+              key={s.num}
+              to={s.href}
+              className="group flex items-center gap-2 px-4 py-3 border-t border-border/50 hover:bg-accent/5 transition-colors duration-200"
+            >
+              <span className="text-accent/60 group-hover:text-accent text-xs font-heading font-semibold">{s.num}</span>
+              <span className="text-sm font-heading font-semibold text-muted-foreground group-hover:text-foreground transition-colors duration-200">{s.title}</span>
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const ServiceRow = ({ s }: { s: (typeof strategicServices)[0] }) => (
   <Link
@@ -122,9 +153,11 @@ const ServicesArchive = () => {
 
       {/* SERVICE TABS */}
       <section className="section-light border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 md:py-0">
-          {/* Mobile: 2-col grid */}
-          <div className="grid grid-cols-2 gap-2 md:hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-0">
+          {/* Mobile: dropdown */}
+          <MobileServiceDropdown services={[...strategicServices, ...executionServices]} />
+          {/* Tablet: 2x3 grid */}
+          <div className="hidden sm:grid md:hidden grid-cols-2 gap-2 py-4">
             {[...strategicServices, ...executionServices].map((s) => (
               <Link
                 key={s.num}
