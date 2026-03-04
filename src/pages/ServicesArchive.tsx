@@ -157,7 +157,7 @@ const ServicesArchive = () => {
           {/* Mobile: dropdown */}
           <MobileServiceDropdown services={[...strategicServices, ...executionServices]} />
           {/* Tablet: 2x3 grid */}
-          <div className="hidden sm:grid md:hidden grid-cols-2 gap-2 py-4">
+          <div className="hidden sm:grid md:hidden grid-cols-3 gap-2 py-4">
             {[...strategicServices, ...executionServices].map((s) => (
               <Link
                 key={s.num}
