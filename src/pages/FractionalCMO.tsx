@@ -2,9 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import fcmo1 from "@/assets/services/fcmo-1.jpg";
 import fcmo2 from "@/assets/services/fcmo-2.jpg";
-import fcmo3 from "@/assets/services/fcmo-3.png";
-import fcmo4 from "@/assets/services/fcmo-4.png";
-import fcmo5 from "@/assets/services/fcmo-5.png";
 import fcmo6 from "@/assets/services/fcmo-6.png";
 import fboImg from "@/assets/cases/fbo.jpg";
 import koeImg from "@/assets/cases/koe.jpg";
@@ -163,9 +160,9 @@ const FractionalCMO = () => {
     <>
       <Navbar />
 
-      {/* HERO — Impression-style: label + massive headline + offset body */}
+      {/* HERO */}
       <section className="section-dark min-h-screen flex items-center pt-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-32">
           <div className="max-w-4xl">
             <p className="text-accent font-heading font-semibold text-xs tracking-[0.2em] uppercase mb-6 animate-fade-up">
               Fractional CMO Perth
@@ -174,7 +171,7 @@ const FractionalCMO = () => {
               Fractional CMO Perth.
             </h1>
             <p
-              className="body-lg text-primary-foreground/70 max-w-2xl mb-12 animate-fade-up"
+              className="body-lg text-primary-foreground/70 max-w-2xl mb-10 animate-fade-up"
               style={{ animationDelay: "0.2s" }}
             >
               Strategic marketing leadership for businesses that have outgrown guesswork. With an execution team built in.
@@ -195,15 +192,15 @@ const FractionalCMO = () => {
         </div>
       </section>
 
-      {/* THE PROBLEM — editorial dark section mirroring homepage Problem */}
+      {/* THE PROBLEM */}
       <section id="problem" className="section-light">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-8">
+            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">
               You don't have a marketing problem.<br />
               <span className="text-accent">You have a leadership problem.</span>
             </h2>
-            <div className="space-y-5 mb-14">
+            <div className="space-y-4 mb-10">
               <p className="body-lg text-muted-foreground">
                 You're spending on marketing. Ads are running. Content's posting. There are dashboards and reports and plenty of activity.
               </p>
@@ -217,8 +214,7 @@ const FractionalCMO = () => {
                 A full-time marketing director would fix it. But at $200K a year plus super, that's a significant commitment for a business your size.
               </p>
             </div>
-            {/* Pull quote — mirroring homepage typewriter section */}
-            <div className="py-10 border-t border-b border-border">
+            <div className="py-8 border-t border-b border-border">
               <p
                 className="font-heading font-bold tracking-tight leading-[1.15] text-accent"
                 style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)" }}
@@ -230,15 +226,15 @@ const FractionalCMO = () => {
         </div>
       </section>
 
-      {/* WHAT IS A FRACTIONAL CMO — dark editorial centre-aligned */}
+      {/* WHAT IS A FRACTIONAL CMO */}
       <section className="section-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div>
-              <h2 className="headline mb-10">What is a fractional CMO?</h2>
-              <div className="space-y-5 body-lg text-primary-foreground/70">
+              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">What is a fractional CMO?</h2>
+              <div className="space-y-4 body-lg text-primary-foreground/70">
                 <p>
-                  A fractional CMO is a senior marketing leader who works inside your business part-time. Same strategic thinking as a full-time Chief Marketing Officer — setting strategy, overseeing execution, interpreting data, managing teams and providers, and making sure every marketing dollar is accountable.
+                  A fractional CMO is a senior marketing leader who works inside your business part-time. Same strategic thinking as a full-time Chief Marketing Officer: setting strategy, overseeing execution, interpreting data, managing teams and providers, and making sure every marketing dollar is accountable.
                 </p>
                 <p>
                   The "fractional" part means you get this leadership on a part-time basis. Typically one to two days per week. It's the same level of strategic oversight, applied with focus rather than diluted across a 40-hour week.
@@ -259,30 +255,25 @@ const FractionalCMO = () => {
         </div>
       </section>
 
-      {/* FULL-WIDTH IMAGE BREAK */}
-      <div className="w-full h-[40vh] md:h-[50vh] overflow-hidden">
-        <img src={fcmo3} alt="Strategic marketing" className="w-full h-full object-cover" />
-      </div>
-
-      {/* FRACTIONAL CMO VS ALTERNATIVES — Directive-style numbered rows */}
+      {/* FRACTIONAL CMO VS ALTERNATIVES */}
       <section className="section-light">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <h2 className="headline mb-4 max-w-3xl">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
+          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-3 max-w-3xl">
             Fractional CMO vs. the alternatives.
           </h2>
-          <p className="body-lg text-muted-foreground max-w-2xl mb-14">
+          <p className="body-lg text-muted-foreground max-w-2xl mb-10">
             Every option has trade-offs. Here's how a fractional CMO compares.
           </p>
           <div className="space-y-0">
             {comparisons.map((c) => (
               <div
                 key={c.num}
-                className="flex flex-col md:flex-row gap-4 md:gap-8 py-8 border-t border-border last:border-b"
+                className="flex flex-col md:flex-row gap-4 md:gap-8 py-6 md:py-8 border-t border-border last:border-b"
               >
                 <span className="text-accent font-heading text-sm font-semibold w-10 shrink-0">
                   {c.num}
                 </span>
-                <h3 className="font-heading font-bold text-2xl md:text-3xl text-foreground md:w-[30%] shrink-0">
+                <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground md:w-[30%] shrink-0">
                   {c.title}
                 </h3>
                 <p className="body-lg text-muted-foreground flex-1">{c.text}</p>
@@ -294,7 +285,7 @@ const FractionalCMO = () => {
 
       {/* MID-PAGE CTA BAND */}
       <section className="section-accent">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-10 md:py-14 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="font-heading font-bold text-2xl md:text-3xl text-accent-foreground">
             Ready to stop guessing?
           </p>
@@ -304,16 +295,16 @@ const FractionalCMO = () => {
         </div>
       </section>
 
-      {/* HOW MAMBA IS DIFFERENT — image + text */}
+      {/* HOW MAMBA IS DIFFERENT */}
       <section className="section-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div>
-              <img src={fcmo4} alt="Strategy and delivery" className="w-full aspect-[4/5] object-cover" />
+              <img src={fcmo6} alt="Strategy and delivery" className="w-full aspect-[4/5] object-cover" />
             </div>
             <div>
-              <h2 className="headline mb-8">Strategy and delivery. One team.</h2>
-              <div className="space-y-5 body-lg text-primary-foreground/70">
+              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">Strategy and delivery. One team.</h2>
+              <div className="space-y-4 body-lg text-primary-foreground/70">
                 <p>
                   Here's what usually happens. The fractional CMO builds a strategy. Hands it to an agency to execute. The agency interprets it their own way. Things get lost. Accountability blurs.
                 </p>
@@ -332,11 +323,11 @@ const FractionalCMO = () => {
         </div>
       </section>
 
-      {/* HOW IT WORKS — numbered rows like homepage Services */}
+      {/* HOW IT WORKS */}
       <section className="section-light">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="max-w-3xl mb-14">
-            <h2 className="headline mb-4">How it works.</h2>
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-3">How it works.</h2>
             <p className="body-lg text-muted-foreground">
               We don't start with campaigns. We start with clarity.
             </p>
@@ -345,13 +336,13 @@ const FractionalCMO = () => {
             {phases.map((p) => (
               <div
                 key={p.num}
-                className="flex flex-col md:flex-row gap-4 md:gap-8 py-8 border-t border-border last:border-b"
+                className="flex flex-col md:flex-row gap-4 md:gap-8 py-6 md:py-8 border-t border-border last:border-b"
               >
                 <span className="text-accent font-heading text-sm font-semibold w-10 shrink-0">
                   {p.num}
                 </span>
                 <div className="md:w-[30%] shrink-0">
-                  <h3 className="font-heading font-bold text-2xl md:text-3xl text-foreground">
+                  <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground">
                     {p.title}
                   </h3>
                   <p className="text-accent font-heading font-semibold text-sm mt-1">
@@ -362,24 +353,25 @@ const FractionalCMO = () => {
               </div>
             ))}
           </div>
-          <p className="body-lg text-muted-foreground mt-10 max-w-3xl">
-            No frameworks with clever names. No proprietary methodologies. Just a logical sequence: understand it, fix it, build it, prove it.
-          </p>
+          {/* Featured pull-quote */}
+          <div className="mt-10 py-8 border-t border-b border-border">
+            <p className="font-heading font-bold tracking-tight leading-[1.2] text-foreground" style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)" }}>
+              No frameworks with clever names.<br />
+              No proprietary methodologies.<br />
+              Just a logical sequence:<br />
+              <span className="text-accent">understand it, fix it, build it, prove it.</span>
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* FULL-WIDTH IMAGE BREAK */}
-      <div className="w-full h-[40vh] md:h-[50vh] overflow-hidden">
-        <img src={fcmo5} alt="Marketing results" className="w-full h-full object-cover" />
-      </div>
-
-      {/* WHAT'S INCLUDED — clean text grid, Barrel-style */}
+      {/* WHAT'S INCLUDED */}
       <section className="section-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <h2 className="headline mb-14">What's included.</h2>
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
+          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-10">What's included.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
             {included.map((item, i) => (
-              <div key={i} className="py-6 border-t border-primary-foreground/15">
+              <div key={i} className="py-5 border-t border-primary-foreground/15">
                 <h3 className="font-heading font-bold text-lg text-primary-foreground mb-2">
                   {item.title}
                 </h3>
@@ -392,20 +384,20 @@ const FractionalCMO = () => {
         </div>
       </section>
 
-      {/* WHO THIS IS FOR — two-column with image */}
+      {/* WHO THIS IS FOR — restructured: text left with both sections, image right */}
       <section className="section-light">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
             <div>
-              <h2 className="headline mb-8">Who this is for.</h2>
-              <div className="space-y-5">
+              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">Who this is for.</h2>
+              <div className="space-y-4">
                 <p className="body-lg text-muted-foreground">
                   Business owners doing $2M to $20M who are spending on marketing but can't see where it's going. You've outgrown doing it yourself. You're not ready for a full-time hire. You're frustrated by providers who confuse activity with results.
                 </p>
                 <p className="body-lg text-muted-foreground italic">
                   If you've ever read a marketing report and felt dumber afterwards, you're probably in the right place.
                 </p>
-                <div className="mt-8">
+                <div className="mt-6">
                   <h3 className="font-heading font-bold text-lg text-foreground mb-3">
                     Industries we work with
                   </h3>
@@ -413,29 +405,29 @@ const FractionalCMO = () => {
                     Childcare, tourism, hospitality, professional services, trades and construction, eCommerce, health and wellness, education. The industry matters less than the stage.
                   </p>
                 </div>
+                <div className="mt-6 border-t border-border pt-6">
+                  <h3 className="font-heading font-bold text-lg text-foreground mb-3">
+                    Who this isn't for
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Startups with no revenue. Businesses hunting for a quick hack. Anyone who wants a marketing person to "just run the socials." If you want hype, we're not the right fit.
+                  </p>
+                </div>
               </div>
             </div>
             <div>
-              <img src={fcmo6} alt="Marketing leadership" className="w-full aspect-[4/5] object-cover mb-8" />
-              <div className="border-t border-border pt-6">
-                <h3 className="font-heading font-bold text-lg text-foreground mb-3">
-                  Who this isn't for
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Startups with no revenue. Businesses hunting for a quick hack. Anyone who wants a marketing person to "just run the socials." If you want hype, we're not the right fit.
-                </p>
-              </div>
+              <img src={fcmo6} alt="Marketing leadership" className="w-full aspect-[4/5] object-cover" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* CONFUSION IS EXPENSIVE — accent pull-quote section */}
+      {/* CONFUSION IS EXPENSIVE */}
       <section className="section-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="headline mb-8">Confusion is expensive.</h2>
-            <div className="space-y-5 mb-14">
+            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">Confusion is expensive.</h2>
+            <div className="space-y-4 mb-10">
               <p className="body-lg text-primary-foreground/70">
                 The platforms aren't working for you anymore. They're testing on you. Every algorithm shift, every "smart" feature, every AI update moves the goalposts while you foot the bill.
               </p>
@@ -446,7 +438,7 @@ const FractionalCMO = () => {
                 The longer you stay unclear, the more assumptions harden into habits. Bad data doesn't just waste money. It shapes your next decisions.
               </p>
             </div>
-            <div className="py-10 border-t border-b border-primary-foreground/15">
+            <div className="py-8 border-t border-b border-primary-foreground/15">
               <p
                 className="font-heading font-bold tracking-tight leading-[1.15] text-accent"
                 style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)" }}
@@ -460,7 +452,7 @@ const FractionalCMO = () => {
 
       {/* MID-PAGE CTA BAND */}
       <section className="section-accent">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-10 md:py-14 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="font-heading font-bold text-2xl md:text-3xl text-accent-foreground">
             Thirty minutes. No pitch. Just clarity.
           </p>
@@ -472,16 +464,16 @@ const FractionalCMO = () => {
 
       {/* WHY TOBY */}
       <section className="section-light">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div>
               <img src={fcmo2} alt="Toby — Mamba Digital" className="w-full aspect-[4/5] object-cover" />
             </div>
             <div>
-              <h2 className="headline mb-10">
+              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">
                 A CMO who reads your P&L before your brand guidelines.
               </h2>
-              <div className="space-y-5 body-lg text-muted-foreground">
+              <div className="space-y-4 body-lg text-muted-foreground">
                 <p>
                   Toby didn't start in marketing. He started in accounting, then property development. When his wife bought an eCommerce business, they spent $30,000 on agencies that promised growth but couldn't explain what they were actually doing.
                 </p>
@@ -497,11 +489,11 @@ const FractionalCMO = () => {
         </div>
       </section>
 
-      {/* RELATED CASE STUDIES — matching homepage Proof grid */}
+      {/* RELATED CASE STUDIES */}
       <section className="section-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14 gap-6">
-            <h2 className="headline">Businesses we've led.</h2>
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-14 gap-6">
+            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem]">Businesses we've led.</h2>
             <a href="/#work" className="btn-primary self-start md:self-auto">
               All Case Studies
             </a>
@@ -542,12 +534,12 @@ const FractionalCMO = () => {
 
       {/* PERTH & WA FOCUS */}
       <section className="section-light">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="max-w-4xl">
-            <h2 className="headline mb-10">
+            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">
               Based in Perth. Built for WA businesses.
             </h2>
-            <div className="space-y-5 body-lg text-muted-foreground">
+            <div className="space-y-4 body-lg text-muted-foreground">
               <p>
                 Mamba is based in Subiaco, Perth, and works with businesses across Perth Metro and South West WA, including Busselton, Dunsborough, and Margaret River.
               </p>
@@ -562,10 +554,10 @@ const FractionalCMO = () => {
         </div>
       </section>
 
-      {/* FAQ — dark section */}
+      {/* FAQ */}
       <section className="section-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <h2 className="headline mb-14">Questions people usually ask.</h2>
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
+          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-10">Questions people usually ask.</h2>
           <div className="max-w-3xl">
             {faqs.map((faq, i) => (
               <FAQItem key={i} q={faq.q} a={faq.a} />
@@ -576,17 +568,17 @@ const FractionalCMO = () => {
 
       {/* FINAL CTA */}
       <section className="section-accent">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24 text-center">
-          <h2 className="headline mb-8 text-accent-foreground">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20 text-center">
+          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6 text-accent-foreground">
             Book a conversation. No pitch.
           </h2>
-          <p className="body-lg text-accent-foreground/80 max-w-2xl mx-auto mb-12">
+          <p className="body-lg text-accent-foreground/80 max-w-2xl mx-auto mb-10">
             Thirty minutes. Your business, your numbers, your situation. If it makes sense, we'll map the work and start the clarity phase. If it doesn't, you'll still walk away with a clearer picture.
           </p>
-          <a href="/contact" className="btn-inverted mb-8">
+          <a href="/contact" className="btn-inverted mb-6">
             Book a Conversation
           </a>
-          <p className="text-accent-foreground/60 text-sm mt-8">
+          <p className="text-accent-foreground/60 text-sm mt-6">
             Based in Subiaco, Perth. Working with businesses across Perth Metro and South West WA.
           </p>
         </div>
