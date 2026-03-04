@@ -40,6 +40,7 @@ const CaseStudiesArchive = () => {
       {featured && (
         <section className="section-dark">
           <div className="max-w-7xl mx-auto px-6 md:px-10 pb-10">
+            <h2 className="headline mb-10 md:mb-14">Case Study</h2>
             <Link
               to={`/work/${featured.slug}`}
               className="group relative block w-full overflow-hidden"
