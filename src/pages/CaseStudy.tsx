@@ -210,18 +210,18 @@ const CaseStudy = () => {
             <h2 className="headline mb-8 md:mb-14">Related projects.</h2>
 
             {/* Desktop grid */}
-            <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="hidden lg:grid grid-cols-3 gap-5">
               {related.map((r) => (
                 <RelatedCard key={r.slug} r={r} />
               ))}
             </div>
 
-            {/* Mobile carousel with peek */}
-            <div className="md:hidden">
+            {/* Mobile/Tablet carousel with peek */}
+            <div className="lg:hidden">
               <div className="overflow-hidden" ref={emblaRef}>
                 <div className="flex gap-3">
                   {related.map((r) => (
-                    <div key={r.slug} className="min-w-0 shrink-0" style={{ flexBasis: "82%" }}>
+                    <div key={r.slug} className="min-w-0 shrink-0 basis-[82%] sm:basis-[47%]">
                       <RelatedCard r={r} />
                     </div>
                   ))}
@@ -229,7 +229,7 @@ const CaseStudy = () => {
               </div>
 
               {/* Dot indicators */}
-              <div className="flex justify-center gap-1.5 mt-5">
+              <div className="flex justify-center gap-1.5 mt-5 lg:hidden">
                 {related.map((_, i) => (
                   <button
                     key={i}
