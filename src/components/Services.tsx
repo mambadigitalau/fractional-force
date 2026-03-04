@@ -55,7 +55,7 @@ const Services = () => {
                 <Play className="w-4 h-4" />
                 Watch our showreel
               </button>
-              <a href="/contact" className="btn-primary">
+              <a href="/contact" className="btn-primary whitespace-nowrap">
                 Work with us
               </a>
             </div>
