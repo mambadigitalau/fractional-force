@@ -172,8 +172,8 @@ const FractionalCMO = () => {
       <Navbar />
 
       {/* HERO */}
-      <section className="section-dark min-h-screen flex items-center pt-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-32">
+      <section className="section-dark min-h-[70vh] flex items-center pt-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24">
           <div className="max-w-4xl">
             <p className="text-accent font-heading font-semibold text-xs tracking-[0.2em] uppercase mb-6 animate-fade-up">
               Fractional CMO Perth
