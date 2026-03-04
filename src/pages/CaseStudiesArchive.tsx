@@ -4,6 +4,51 @@ import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
 import { caseStudies } from "@/lib/caseStudies";
 
+const CaseStudyCard = ({ cs }: { cs: (typeof caseStudies)[number] }) => {
+  const href = cs.sections ? `/work/${cs.slug}` : (cs.externalLink || "#");
+  const isInternal = !!cs.sections;
+
+  const inner = (
+    <div className="group relative block aspect-[3/4] overflow-hidden">
+      <img
+        src={cs.image}
+        alt={cs.title}
+        className="absolute inset-0 w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col justify-end h-[55%]">
+        <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
+          {cs.tags.join(", ")}
+        </p>
+        <h3
+          className={`font-heading font-bold text-accent mb-2 ${
+            cs.title.length > 20 ? "text-lg md:text-xl" : "text-xl md:text-2xl"
+          }`}
+        >
+          {cs.title}
+        </h3>
+        <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">
+          {cs.desc}
+        </p>
+      </div>
+    </div>
+  );
+
+  if (isInternal) {
+    return (
+      <Link to={href} className="block">
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+      {inner}
+    </a>
+  );
+};
+
 const CaseStudiesArchive = () => {
   const featured = caseStudies.find((cs) => cs.sections);
   const rest = caseStudies.filter((cs) => cs !== featured);
@@ -49,7 +94,7 @@ const CaseStudiesArchive = () => {
                   <img
                     src={featured.image}
                     alt={featured.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105"
                   />
                 </div>
                 <div className="bg-primary border border-primary-foreground/10 p-10 md:p-14 lg:p-16 flex flex-col justify-center">
@@ -75,72 +120,13 @@ const CaseStudiesArchive = () => {
         </section>
       )}
 
-      {/* CASE STUDIES — staggered editorial grid */}
-      <section className="section-light">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="space-y-0">
-            {rest.map((cs, i) => {
-              const href = cs.sections
-                ? `/work/${cs.slug}`
-                : cs.externalLink || "#";
-              const isInternal = !!cs.sections;
-              const isEven = i % 2 === 0;
-
-              const Wrapper = isInternal ? Link : "a";
-              const wrapperProps = isInternal
-                ? { to: href }
-                : { href, target: "_blank", rel: "noopener noreferrer" };
-
-              return (
-                <Wrapper
-                  key={cs.slug}
-                  {...(wrapperProps as any)}
-                  className="group grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-border last:border-b"
-                >
-                  <div
-                    className={`relative aspect-[16/10] md:aspect-[4/3] overflow-hidden ${
-                      isEven ? "" : "md:order-2"
-                    }`}
-                  >
-                    <img
-                      src={cs.image}
-                      alt={cs.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <div
-                    className={`flex flex-col justify-center p-8 md:p-12 lg:p-16 ${
-                      isEven ? "" : "md:order-1"
-                    }`}
-                  >
-                    <span className="text-accent font-heading text-sm font-semibold mb-1">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <p className="text-muted-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-4">
-                      {cs.tags.join(" · ")}
-                    </p>
-                    <h3 className="font-heading font-bold text-2xl md:text-3xl lg:text-4xl text-foreground mb-4 group-hover:text-accent transition-colors duration-300 leading-tight">
-                      {cs.title}
-                    </h3>
-                    <p className="body-lg text-muted-foreground mb-2 max-w-md">
-                      {cs.desc}
-                    </p>
-                    <div className="mt-6 flex items-center gap-3">
-                      <span className="text-xs font-heading font-semibold text-muted-foreground/60 uppercase tracking-wider">
-                        {cs.industry}
-                      </span>
-                      <span className="w-1 h-1 bg-muted-foreground/30" />
-                      <span className="text-xs font-heading font-semibold text-muted-foreground/60 uppercase tracking-wider">
-                        {cs.location}
-                      </span>
-                    </div>
-                    <span className="text-muted-foreground/30 group-hover:text-accent text-lg mt-8 transition-all duration-300 group-hover:translate-x-2 self-start font-heading font-semibold">
-                      {isInternal ? "Read case study" : "View project"} &#8594;
-                    </span>
-                  </div>
-                </Wrapper>
-              );
-            })}
+      {/* CASE STUDIES GRID — matches homepage Proof grid */}
+      <section className="section-dark">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {rest.map((cs) => (
+              <CaseStudyCard key={cs.slug} cs={cs} />
+            ))}
           </div>
         </div>
       </section>
