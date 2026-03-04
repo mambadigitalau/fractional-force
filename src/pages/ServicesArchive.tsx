@@ -123,15 +123,17 @@ const ServicesArchive = () => {
       {/* SERVICE TABS */}
       <section className="section-light border-b border-border">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="flex overflow-x-auto no-scrollbar -mb-px">
+          <div className="flex justify-center overflow-x-auto no-scrollbar -mb-px">
             {[...strategicServices, ...executionServices].map((s) => (
               <Link
                 key={s.num}
                 to={s.href}
-                className="group flex items-center gap-2 px-5 py-4 border-b-2 border-transparent hover:border-accent text-muted-foreground hover:text-foreground transition-all duration-200 whitespace-nowrap shrink-0"
+                className="group relative flex items-center gap-2 px-5 md:px-6 py-4 text-muted-foreground hover:text-foreground transition-colors duration-300 whitespace-nowrap shrink-0"
               >
-                <span className="text-accent text-xs font-heading font-semibold">{s.num}</span>
-                <span className="text-sm font-heading font-semibold">{s.title}</span>
+                <span className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300 ease-out" />
+                <span className="relative text-accent/60 group-hover:text-accent text-xs font-heading font-semibold transition-colors duration-300">{s.num}</span>
+                <span className="relative text-sm font-heading font-semibold">{s.title}</span>
               </Link>
             ))}
           </div>
