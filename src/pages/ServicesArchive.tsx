@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -117,6 +118,91 @@ const DarkServiceRow = ({ s }: { s: (typeof executionServices)[0] }) => (
     </span>
   </Link>
 );
+
+const ProofStrip = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", containScroll: "trimSnaps" });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi, onSelect]);
+
+  return (
+    <section className="section-dark">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14 gap-6">
+          <h2 className="headline">See it in practice.</h2>
+          <Link to="/work" className="btn-primary self-start md:self-auto">
+            All Case Studies
+          </Link>
+        </div>
+
+        {/* Desktop grid */}
+        <div className="hidden lg:grid grid-cols-3 gap-5">
+          {proofStudies.map((cs) => (
+            <Link
+              key={cs.slug}
+              to={cs.sections ? `/work/${cs.slug}` : (cs.externalLink || "#")}
+              className="group relative block aspect-[3/4] overflow-hidden"
+            >
+              <img src={cs.image} alt={cs.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col justify-end h-[55%]">
+                <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">{cs.tags.join(", ")}</p>
+                <h3 className={`font-heading font-bold text-accent mb-2 ${cs.title.length > 20 ? "text-lg md:text-xl" : "text-xl md:text-2xl"}`}>{cs.title}</h3>
+                <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">{cs.desc}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile/Tablet carousel */}
+        <div className="lg:hidden">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-4">
+              {proofStudies.map((cs) => (
+                <div key={cs.slug} className="flex-none basis-[82%] sm:basis-[47%]">
+                  <Link
+                    to={cs.sections ? `/work/${cs.slug}` : (cs.externalLink || "#")}
+                    className="group relative block aspect-[3/4] overflow-hidden"
+                  >
+                    <img src={cs.image} alt={cs.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col justify-end h-[55%]">
+                      <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">{cs.tags.join(", ")}</p>
+                      <h3 className={`font-heading font-bold text-accent mb-2 ${cs.title.length > 20 ? "text-lg md:text-xl" : "text-xl md:text-2xl"}`}>{cs.title}</h3>
+                      <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">{cs.desc}</p>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Dot indicators */}
+          <div className="flex justify-center gap-2 mt-6">
+            {scrollSnaps.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => emblaApi?.scrollTo(i)}
+                className={`h-2 rounded-full transition-all duration-300 ${i === selectedIndex ? "w-6 bg-accent" : "w-2 bg-primary-foreground/30"}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 // Get 3 case studies for the proof strip
 const proofStudies = caseStudies.slice(0, 3);
@@ -287,52 +373,7 @@ const ServicesArchive = () => {
       </section>
 
       {/* PROOF — case studies strip */}
-      <section className="section-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-14 gap-6">
-            <h2 className="headline">See it in practice.</h2>
-            <Link
-              to="/work"
-              className="btn-primary self-start md:self-auto"
-            >
-              All Case Studies
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {proofStudies.map((cs) => (
-              <Link
-                key={cs.slug}
-                to={cs.sections ? `/work/${cs.slug}` : (cs.externalLink || "#")}
-                className="group relative block aspect-[3/4] overflow-hidden"
-              >
-                <img
-                  src={cs.image}
-                  alt={cs.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col justify-end h-[55%]">
-                  <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
-                    {cs.tags.join(", ")}
-                  </p>
-                  <h3
-                    className={`font-heading font-bold text-accent mb-2 ${
-                      cs.title.length > 20
-                        ? "text-lg md:text-xl"
-                        : "text-xl md:text-2xl"
-                    }`}
-                  >
-                    {cs.title}
-                  </h3>
-                  <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">
-                    {cs.desc}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProofStrip />
 
       <FinalCTA />
       <Footer />
