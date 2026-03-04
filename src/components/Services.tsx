@@ -68,10 +68,10 @@ const Services = () => {
                 href={s.href || "#"}
                 className="group flex items-center gap-4 md:gap-6 py-4 md:py-6 border-t border-border last:border-b hover:pl-3 transition-all duration-300"
               >
-                <span className="text-accent font-heading text-sm font-semibold w-8 shrink-0">
+                <span className="text-accent font-heading text-sm font-semibold w-6 md:w-8 shrink-0">
                   {s.num}
                 </span>
-                <h3 className="font-heading text-2xl md:text-4xl font-bold text-foreground group-hover:text-accent transition-colors duration-300 w-[45%] md:w-[40%] shrink-0">
+                <h3 className="font-heading text-2xl md:text-4xl font-bold text-foreground group-hover:text-accent transition-colors duration-300 flex-1 md:flex-none md:w-[40%] md:shrink-0">
                   {s.title}
                 </h3>
                 <p className="hidden md:block text-muted-foreground text-base flex-1 group-hover:text-foreground/70 transition-colors duration-300">
