@@ -110,7 +110,7 @@ const CaseStudiesArchive = () => {
                   <p className="body-lg text-muted-foreground mb-8 max-w-lg">
                     {featured.desc}
                   </p>
-                  <span className="text-muted-foreground/40 group-hover:text-accent text-lg transition-all duration-300 group-hover:translate-x-2 self-start font-heading font-semibold">
+                  <span className="text-foreground group-hover:text-accent text-lg transition-all duration-300 group-hover:translate-x-2 self-start font-heading font-semibold">
                     Read case study &#8594;
                   </span>
                 </div>
