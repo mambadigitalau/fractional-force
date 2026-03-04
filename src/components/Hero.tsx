@@ -1,4 +1,8 @@
 import mambaLockupReverse from "@/assets/mamba-lockup-reverse.png";
+import metaPartner from "@/assets/partners/meta-business-partner.png";
+import klaviyoMaster from "@/assets/partners/klaviyo-master.png";
+import shopifyPartners from "@/assets/partners/shopify-partners.png";
+import googlePartner from "@/assets/partners/google-partner.svg";
 
 const Hero = () => {
   return (
@@ -22,6 +26,15 @@ const Hero = () => {
             >
               See how we work
               <span className="text-xl leading-none">&#8595;</span>
+            </a>
+          </div>
+          {/* Partner badges */}
+          <div className="flex items-center gap-4 md:gap-6 mt-12 animate-fade-up" style={{ animationDelay: "0.6s" }}>
+            <img src={metaPartner} alt="Meta Business Partner" className="h-10 md:h-12 w-auto" />
+            <img src={klaviyoMaster} alt="Klaviyo Master Partner" className="h-8 md:h-10 w-auto" />
+            <img src={shopifyPartners} alt="Shopify Partners" className="h-6 md:h-7 w-auto" />
+            <a href="https://www.google.com/partners/agency?id=6852427839" target="_blank" rel="noopener noreferrer">
+              <img src={googlePartner} alt="Google Partner" className="h-12 md:h-14 w-auto" />
             </a>
           </div>
         </div>
