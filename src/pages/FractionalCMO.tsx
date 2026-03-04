@@ -222,7 +222,7 @@ const FractionalCMO = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="px-10 sm:px-16 md:px-0">
               <img
                 src={fcmo1}
                 alt="Marketing leadership in Perth"
@@ -278,7 +278,9 @@ const FractionalCMO = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div>
+            <div className="px-10 sm:px-16 md:px-0">
               <img src={fcmo6} alt="Strategy and delivery" className="w-full aspect-[4/5] object-cover max-h-[500px]" />
+            </div>
             </div>
             <div>
               <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">Strategy and delivery. One team.</h2>
@@ -427,7 +429,9 @@ const FractionalCMO = () => {
               </div>
             </div>
             <div>
+            <div className="px-10 sm:px-16 md:px-0">
               <img src={fcmo6} alt="Marketing leadership" className="w-full aspect-[4/5] object-cover max-h-[500px]" />
+            </div>
             </div>
           </div>
         </div>
@@ -478,7 +482,9 @@ const FractionalCMO = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div>
+            <div className="px-10 sm:px-16 md:px-0">
               <img src={fcmo2} alt="Toby — Mamba Digital" className="w-full aspect-[4/5] object-cover max-h-[500px]" />
+            </div>
             </div>
             <div>
               <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">
