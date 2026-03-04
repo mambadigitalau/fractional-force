@@ -40,7 +40,6 @@ const CaseStudiesArchive = () => {
       {featured && (
         <section className="section-dark">
           <div className="max-w-7xl mx-auto px-6 md:px-10 pb-10">
-            <h2 className="headline mb-10 md:mb-14">Case Study</h2>
             <Link
               to={`/work/${featured.slug}`}
               className="group relative block w-full overflow-hidden"
@@ -76,24 +75,16 @@ const CaseStudiesArchive = () => {
         </section>
       )}
 
-      {/* SECTION TITLE */}
-      <section className="section-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-10 md:pb-14">
-          <h2 className="headline">Case Studies</h2>
-        </div>
-      </section>
-
       {/* CASE STUDIES — staggered editorial grid */}
-      <section>
-        <div className="max-w-7xl mx-auto">
-          <div>
+      <section className="section-light">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+          <div className="space-y-0">
             {rest.map((cs, i) => {
               const href = cs.sections
                 ? `/work/${cs.slug}`
                 : cs.externalLink || "#";
               const isInternal = !!cs.sections;
               const isEven = i % 2 === 0;
-              const isDark = isEven;
 
               const Wrapper = isInternal ? Link : "a";
               const wrapperProps = isInternal
@@ -104,7 +95,7 @@ const CaseStudiesArchive = () => {
                 <Wrapper
                   key={cs.slug}
                   {...(wrapperProps as any)}
-                  className="group grid grid-cols-1 md:grid-cols-2 gap-0"
+                  className="group grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-border last:border-b"
                 >
                   <div
                     className={`relative aspect-[16/10] md:aspect-[4/3] overflow-hidden ${
@@ -120,30 +111,30 @@ const CaseStudiesArchive = () => {
                   <div
                     className={`flex flex-col justify-center p-8 md:p-12 lg:p-16 ${
                       isEven ? "" : "md:order-1"
-                    } ${isDark ? "bg-primary text-primary-foreground" : "bg-background text-foreground"}`}
+                    }`}
                   >
                     <span className="text-accent font-heading text-sm font-semibold mb-1">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className={`text-xs font-heading font-semibold tracking-wider uppercase mb-4 ${isDark ? "text-primary-foreground/50" : "text-muted-foreground/50"}`}>
+                    <p className="text-muted-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-4">
                       {cs.tags.join(" · ")}
                     </p>
-                    <h3 className={`font-heading font-bold text-2xl md:text-3xl lg:text-4xl mb-4 group-hover:text-accent transition-colors duration-300 leading-tight ${isDark ? "text-primary-foreground" : "text-foreground"}`}>
+                    <h3 className="font-heading font-bold text-2xl md:text-3xl lg:text-4xl text-foreground mb-4 group-hover:text-accent transition-colors duration-300 leading-tight">
                       {cs.title}
                     </h3>
-                    <p className={`body-lg mb-2 max-w-md ${isDark ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                    <p className="body-lg text-muted-foreground mb-2 max-w-md">
                       {cs.desc}
                     </p>
                     <div className="mt-6 flex items-center gap-3">
-                      <span className={`text-xs font-heading font-semibold uppercase tracking-wider ${isDark ? "text-primary-foreground/50" : "text-muted-foreground/60"}`}>
+                      <span className="text-xs font-heading font-semibold text-muted-foreground/60 uppercase tracking-wider">
                         {cs.industry}
                       </span>
-                      <span className={`w-1 h-1 ${isDark ? "bg-primary-foreground/30" : "bg-muted-foreground/30"}`} />
-                      <span className={`text-xs font-heading font-semibold uppercase tracking-wider ${isDark ? "text-primary-foreground/50" : "text-muted-foreground/60"}`}>
+                      <span className="w-1 h-1 bg-muted-foreground/30" />
+                      <span className="text-xs font-heading font-semibold text-muted-foreground/60 uppercase tracking-wider">
                         {cs.location}
                       </span>
                     </div>
-                    <span className={`group-hover:text-accent text-lg mt-8 transition-all duration-300 group-hover:translate-x-2 self-start font-heading font-semibold ${isDark ? "text-primary-foreground/40" : "text-muted-foreground/30"}`}>
+                    <span className="text-muted-foreground/30 group-hover:text-accent text-lg mt-8 transition-all duration-300 group-hover:translate-x-2 self-start font-heading font-semibold">
                       {isInternal ? "Read case study" : "View project"} &#8594;
                     </span>
                   </div>
