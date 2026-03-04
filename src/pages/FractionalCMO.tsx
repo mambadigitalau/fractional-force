@@ -199,8 +199,8 @@ const FractionalCMO = () => {
       <section id="problem" className="section-light">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="headline mb-8">
-              You don't have a marketing problem.{" "}
+            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-8">
+              You don't have a marketing problem.<br />
               <span className="text-accent">You have a leadership problem.</span>
             </h2>
             <div className="space-y-5 mb-14">
