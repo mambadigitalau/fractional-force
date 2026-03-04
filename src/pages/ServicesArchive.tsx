@@ -122,13 +122,27 @@ const ServicesArchive = () => {
 
       {/* SERVICE TABS */}
       <section className="section-light border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="flex justify-center overflow-x-auto no-scrollbar -mb-px">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 md:py-0">
+          {/* Mobile: 2-col grid */}
+          <div className="grid grid-cols-2 gap-2 md:hidden">
             {[...strategicServices, ...executionServices].map((s) => (
               <Link
                 key={s.num}
                 to={s.href}
-                className="group relative flex items-center gap-2 px-5 md:px-6 py-4 text-muted-foreground hover:text-foreground transition-colors duration-300 whitespace-nowrap shrink-0"
+                className="group flex items-center gap-2 px-4 py-3 border border-border hover:border-accent hover:bg-accent/5 transition-all duration-300"
+              >
+                <span className="text-accent/60 group-hover:text-accent text-xs font-heading font-semibold">{s.num}</span>
+                <span className="text-sm font-heading font-semibold text-muted-foreground group-hover:text-foreground transition-colors duration-300">{s.title}</span>
+              </Link>
+            ))}
+          </div>
+          {/* Desktop: horizontal tabs */}
+          <div className="hidden md:flex justify-center -mb-px">
+            {[...strategicServices, ...executionServices].map((s) => (
+              <Link
+                key={s.num}
+                to={s.href}
+                className="group relative flex items-center gap-2 px-6 py-4 text-muted-foreground hover:text-foreground transition-colors duration-300 whitespace-nowrap shrink-0"
               >
                 <span className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-300" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300 ease-out" />
