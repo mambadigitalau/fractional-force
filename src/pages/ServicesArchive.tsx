@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FinalCTA from "@/components/FinalCTA";
 import { caseStudies } from "@/lib/caseStudies";
-import mambamark from "@/assets/mamba-mark.png";
+
 
 const strategicServices = [
   {
@@ -317,13 +317,7 @@ const ServicesArchive = () => {
       {/* STRATEGIC SERVICES */}
       <section className="section-light">
         <div className="max-w-7xl mx-auto px-6 md:px-10 pb-20 md:pb-28">
-          <div className="flex items-center gap-4 md:gap-6 mb-10 md:mb-14">
-            <img
-              src={mambamark}
-              alt=""
-              aria-hidden="true"
-              className="h-10 md:h-14 w-auto opacity-20"
-            />
+          <div className="mb-10 md:mb-14">
             <h2 className="headline">Strategic leadership.</h2>
           </div>
           <div className="space-y-0">
