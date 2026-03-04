@@ -63,7 +63,7 @@ const Footer = () => {
               <img
                 src={mambaLockupReverse}
                 alt="Mamba Digital"
-                className="h-8 md:h-10 w-auto mb-4"
+                className="h-8 md:h-10 w-auto object-contain mb-4"
               />
             </Link>
             <p className="text-sm text-primary-foreground/60 leading-relaxed mb-2">

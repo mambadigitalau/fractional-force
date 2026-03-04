@@ -173,4 +173,12 @@
     @apply bg-primary text-primary-foreground font-heading font-semibold px-8 py-4 text-base
            hover:opacity-90 transition-all duration-200 inline-block cursor-pointer;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
