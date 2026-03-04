@@ -120,6 +120,24 @@ const ServicesArchive = () => {
         </div>
       </section>
 
+      {/* SERVICE TABS */}
+      <section className="section-light border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="flex overflow-x-auto no-scrollbar -mb-px">
+            {[...strategicServices, ...executionServices].map((s) => (
+              <Link
+                key={s.num}
+                to={s.href}
+                className="group flex items-center gap-2 px-5 py-4 border-b-2 border-transparent hover:border-accent text-muted-foreground hover:text-foreground transition-all duration-200 whitespace-nowrap shrink-0"
+              >
+                <span className="text-accent text-xs font-heading font-semibold">{s.num}</span>
+                <span className="text-sm font-heading font-semibold">{s.title}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* THE PROBLEM */}
       <section className="section-light">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
