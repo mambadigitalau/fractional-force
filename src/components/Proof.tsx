@@ -1,7 +1,7 @@
 import { caseStudies } from "@/lib/caseStudies";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
+
 
 const CaseStudyCard = ({ cs }: { cs: (typeof caseStudies)[number] }) => (
   <a
@@ -33,7 +33,6 @@ const CaseStudyCard = ({ cs }: { cs: (typeof caseStudies)[number] }) => (
 );
 
 const Proof = () => {
-  const isMobile = useIsMobile();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
@@ -64,21 +63,20 @@ const Proof = () => {
         </div>
 
         {/* Desktop grid */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="hidden lg:grid grid-cols-3 gap-5">
           {caseStudies.map((cs, i) => (
             <CaseStudyCard key={i} cs={cs} />
           ))}
         </div>
 
-        {/* Mobile carousel with peek */}
-        <div className="md:hidden">
+        {/* Mobile/Tablet carousel with peek */}
+        <div className="lg:hidden">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex gap-3">
               {caseStudies.map((cs, i) => (
                 <div
                   key={i}
-                  className="min-w-0 shrink-0"
-                  style={{ flexBasis: "82%" }}
+                  className="min-w-0 shrink-0 basis-[82%] sm:basis-[47%]"
                 >
                   <CaseStudyCard cs={cs} />
                 </div>

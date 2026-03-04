@@ -7,8 +7,9 @@ import fboImg from "@/assets/cases/fbo.jpg";
 import koeImg from "@/assets/cases/koe.jpg";
 import nurtureImg from "@/assets/cases/nurture.jpg";
 import mjbImg from "@/assets/cases/mjb.png";
-import { useState, useRef, useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
 
 const faqs = [
   {
@@ -156,6 +157,16 @@ const FAQItem = ({ q, a }: { q: string; a: string }) => {
 };
 
 const FractionalCMO = () => {
+  const [phasesIndex, setPhasesIndex] = useState(0);
+  const [phasesRef, phasesApi] = useEmblaCarousel({ align: "start", containScroll: false, slidesToScroll: 1 });
+  const onPhasesSelect = useCallback(() => { if (phasesApi) setPhasesIndex(phasesApi.selectedScrollSnap()); }, [phasesApi]);
+  useEffect(() => { if (!phasesApi) return; onPhasesSelect(); phasesApi.on("select", onPhasesSelect); return () => { phasesApi.off("select", onPhasesSelect); }; }, [phasesApi, onPhasesSelect]);
+
+  const [casesIndex, setCasesIndex] = useState(0);
+  const [casesRef, casesApi] = useEmblaCarousel({ align: "start", containScroll: false, slidesToScroll: 1 });
+  const onCasesSelect = useCallback(() => { if (casesApi) setCasesIndex(casesApi.selectedScrollSnap()); }, [casesApi]);
+  useEffect(() => { if (!casesApi) return; onCasesSelect(); casesApi.on("select", onCasesSelect); return () => { casesApi.off("select", onCasesSelect); }; }, [casesApi, onCasesSelect]);
+
   return (
     <>
       <Navbar />
@@ -334,21 +345,34 @@ const FractionalCMO = () => {
           </div>
           {/* Mobile carousel */}
           <div className="md:hidden">
-            <div className="overflow-x-auto scrollbar-hide -mx-6 px-6" style={{ scrollSnapType: "x mandatory" }}>
-              <div className="flex gap-4" style={{ width: "max-content" }}>
+            <div className="overflow-hidden" ref={phasesRef}>
+              <div className="flex gap-3">
                 {phases.map((p) => (
                   <div
                     key={p.num}
-                    className="bg-card border border-border p-6 shrink-0"
-                    style={{ width: "calc(100vw - 48px - 32px)", scrollSnapAlign: "start" }}
+                    className="min-w-0 shrink-0 basis-[85%]"
                   >
-                    <span className="text-accent font-heading text-sm font-semibold">{p.num}</span>
-                    <h3 className="font-heading font-bold text-xl text-foreground mt-2">{p.title}</h3>
-                    <p className="text-accent font-heading font-semibold text-sm mt-1">{p.timeline}</p>
-                    <p className="body-lg text-muted-foreground mt-4">{p.desc}</p>
+                    <div className="bg-card border border-border p-6">
+                      <span className="text-accent font-heading text-sm font-semibold">{p.num}</span>
+                      <h3 className="font-heading font-bold text-xl text-foreground mt-2">{p.title}</h3>
+                      <p className="text-accent font-heading font-semibold text-sm mt-1">{p.timeline}</p>
+                      <p className="body-lg text-muted-foreground mt-4">{p.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="flex justify-center gap-1.5 mt-5">
+              {phases.map((_, i) => (
+                <button
+                  key={i}
+                  aria-label={`Go to phase ${i + 1}`}
+                  onClick={() => phasesApi?.scrollTo(i)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === phasesIndex ? "w-6 bg-accent" : "w-1.5 bg-foreground/20"
+                  }`}
+                />
+              ))}
             </div>
           </div>
           {/* Desktop rows */}
@@ -520,39 +544,51 @@ const FractionalCMO = () => {
           </div>
           {/* Mobile/Tablet carousel */}
           <div className="lg:hidden">
-            <div className="overflow-x-auto scrollbar-hide -mx-6 px-6" style={{ scrollSnapType: "x mandatory" }}>
-              <div className="flex gap-4" style={{ width: "max-content" }}>
+            <div className="overflow-hidden" ref={casesRef}>
+              <div className="flex gap-3">
                 {relatedCaseStudies.map((cs, i) => (
-                  <a
-                    key={i}
-                    href={cs.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative block aspect-[3/4] overflow-hidden shrink-0 w-[80vw] sm:w-[calc((100vw-48px-16px)/2.15)]"
-                    style={{ scrollSnapAlign: "start" }}
-                  >
-                    <img
-                      src={cs.image}
-                      alt={cs.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col justify-end h-[55%]">
-                      <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
-                        {cs.tags}
-                      </p>
-                      <h3 className={`font-heading font-bold text-accent mb-2 ${
-                        cs.title.length > 20 ? "text-base" : "text-lg"
-                      }`}>
-                        {cs.title}
-                      </h3>
-                      <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">
-                        {cs.desc}
-                      </p>
-                    </div>
-                  </a>
+                  <div key={i} className="min-w-0 shrink-0 basis-[80%] sm:basis-[47%]">
+                    <a
+                      href={cs.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative block aspect-[3/4] overflow-hidden"
+                    >
+                      <img
+                        src={cs.image}
+                        alt={cs.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col justify-end h-[55%]">
+                        <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
+                          {cs.tags}
+                        </p>
+                        <h3 className={`font-heading font-bold text-accent mb-2 ${
+                          cs.title.length > 20 ? "text-base" : "text-lg"
+                        }`}>
+                          {cs.title}
+                        </h3>
+                        <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">
+                          {cs.desc}
+                        </p>
+                      </div>
+                    </a>
+                  </div>
                 ))}
               </div>
+            </div>
+            <div className="flex justify-center gap-1.5 mt-5">
+              {relatedCaseStudies.map((_, i) => (
+                <button
+                  key={i}
+                  aria-label={`Go to slide ${i + 1}`}
+                  onClick={() => casesApi?.scrollTo(i)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === casesIndex ? "w-6 bg-accent" : "w-1.5 bg-primary-foreground/30"
+                  }`}
+                />
+              ))}
             </div>
           </div>
           {/* Desktop grid */}
