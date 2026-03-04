@@ -3,10 +3,7 @@ import Footer from "@/components/Footer";
 import fcmo1 from "@/assets/services/fcmo-1.jpg";
 import fcmo2 from "@/assets/services/fcmo-2.jpg";
 import fcmo6 from "@/assets/services/fcmo-6.png";
-import fboImg from "@/assets/cases/fbo.jpg";
-import koeImg from "@/assets/cases/koe.jpg";
-import nurtureImg from "@/assets/cases/nurture.jpg";
-import mjbImg from "@/assets/cases/mjb.png";
+import { caseStudies } from "@/lib/caseStudies";
 import { useState, useCallback, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -99,36 +96,6 @@ const comparisons = [
   },
 ];
 
-const relatedCaseStudies = [
-  {
-    title: "Fat Burners Only",
-    tags: "Email Marketing, Paid Advertising",
-    desc: "No flows. No automation. No strategy. Now it's a $3M+ channel we built from scratch.",
-    image: fboImg,
-    link: "https://mambadigital.au/work/fbo/",
-  },
-  {
-    title: "Katherine Outback Experience",
-    tags: "Paid Advertising, Strategy",
-    desc: "Regional touring, tourism targeting, and a #1 album. Not your typical ad account.",
-    image: koeImg,
-    link: "https://mambadigital.au/work/koe/",
-  },
-  {
-    title: "Nurture Early Learning",
-    tags: "Content & Creative, Paid Advertising",
-    desc: "Three brand new childcare centres. Built the brand. Ran the ads. All three hit targets within months.",
-    image: nurtureImg,
-    link: "https://mambadigital.au/work/nurture-early-learning/",
-  },
-  {
-    title: "MJB Seminars",
-    tags: "Paid Advertising, Strategy",
-    desc: "Zero to 437,000 followers. 1.7 million likes. For a business without a personal brand 12 months ago.",
-    image: mjbImg,
-    link: "https://mambadigital.au/work/mjb-seminars/",
-  },
-];
 
 const FAQItem = ({ q, a }: { q: string; a: string }) => {
   const [open, setOpen] = useState(false);
@@ -546,32 +513,18 @@ const FractionalCMO = () => {
           <div className="lg:hidden">
             <div className="overflow-hidden" ref={casesRef}>
               <div className="flex gap-3">
-                {relatedCaseStudies.map((cs, i) => (
+                {caseStudies.map((cs, i) => (
                   <div key={i} className="min-w-0 shrink-0 basis-[80%] sm:basis-[47%]">
                     <a
-                      href={cs.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={cs.sections ? `/work/${cs.slug}` : (cs.externalLink || "#")}
                       className="group relative block aspect-[3/4] overflow-hidden"
                     >
-                      <img
-                        src={cs.image}
-                        alt={cs.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
+                      <img src={cs.image} alt={cs.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col justify-end h-[55%]">
-                        <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
-                          {cs.tags}
-                        </p>
-                        <h3 className={`font-heading font-bold text-accent mb-2 ${
-                          cs.title.length > 20 ? "text-base" : "text-lg"
-                        }`}>
-                          {cs.title}
-                        </h3>
-                        <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">
-                          {cs.desc}
-                        </p>
+                        <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">{cs.tags.join(", ")}</p>
+                        <h3 className={`font-heading font-bold text-accent mb-2 ${cs.title.length > 20 ? "text-base" : "text-lg"}`}>{cs.title}</h3>
+                        <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">{cs.desc}</p>
                       </div>
                     </a>
                   </div>
@@ -579,46 +532,30 @@ const FractionalCMO = () => {
               </div>
             </div>
             <div className="flex justify-center gap-1.5 mt-5">
-              {relatedCaseStudies.map((_, i) => (
+              {caseStudies.map((_, i) => (
                 <button
                   key={i}
                   aria-label={`Go to slide ${i + 1}`}
                   onClick={() => casesApi?.scrollTo(i)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    i === casesIndex ? "w-6 bg-accent" : "w-1.5 bg-primary-foreground/30"
-                  }`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${i === casesIndex ? "w-6 bg-accent" : "w-1.5 bg-primary-foreground/30"}`}
                 />
               ))}
             </div>
           </div>
-          {/* Desktop grid */}
-          <div className="hidden lg:grid grid-cols-4 gap-5">
-            {relatedCaseStudies.map((cs, i) => (
+          {/* Desktop grid — 3 columns, first 3 only */}
+          <div className="hidden lg:grid grid-cols-3 gap-5">
+            {caseStudies.slice(0, 3).map((cs, i) => (
               <a
                 key={i}
-                href={cs.link}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={cs.sections ? `/work/${cs.slug}` : (cs.externalLink || "#")}
                 className="group relative block aspect-[3/4] overflow-hidden"
               >
-                <img
-                  src={cs.image}
-                  alt={cs.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                <img src={cs.image} alt={cs.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 flex flex-col justify-end h-[55%]">
-                  <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">
-                    {cs.tags}
-                  </p>
-                  <h3 className={`font-heading font-bold text-accent mb-2 ${
-                    cs.title.length > 20 ? "text-base md:text-lg" : "text-lg md:text-xl"
-                  }`}>
-                    {cs.title}
-                  </h3>
-                  <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">
-                    {cs.desc}
-                  </p>
+                  <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-2">{cs.tags.join(", ")}</p>
+                  <h3 className={`font-heading font-bold text-accent mb-2 ${cs.title.length > 20 ? "text-base md:text-lg" : "text-lg md:text-xl"}`}>{cs.title}</h3>
+                  <p className="text-primary-foreground/80 text-sm leading-relaxed line-clamp-2">{cs.desc}</p>
                 </div>
               </a>
             ))}
