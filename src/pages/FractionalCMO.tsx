@@ -196,7 +196,7 @@ const FractionalCMO = () => {
       <section id="problem" className="section-light">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">
+            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">
               You don't have a marketing problem.<br />
               <span className="text-accent">You have a leadership problem.</span>
             </h2>
@@ -231,7 +231,7 @@ const FractionalCMO = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div>
-              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">What is a fractional CMO?</h2>
+              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">What is a fractional CMO?</h2>
               <div className="space-y-4 body-lg text-primary-foreground/70">
                 <p>
                   A fractional CMO is a senior marketing leader who works inside your business part-time. Same strategic thinking as a full-time Chief Marketing Officer: setting strategy, overseeing execution, interpreting data, managing teams and providers, and making sure every marketing dollar is accountable.
@@ -258,7 +258,7 @@ const FractionalCMO = () => {
       {/* FRACTIONAL CMO VS ALTERNATIVES */}
       <section className="section-light">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
-          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-3 max-w-3xl">
+          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-3 max-w-3xl">
             Fractional CMO vs. the alternatives.
           </h2>
           <p className="body-lg text-muted-foreground max-w-2xl mb-10">
@@ -303,7 +303,7 @@ const FractionalCMO = () => {
               <img src={fcmo6} alt="Strategy and delivery" className="w-full aspect-[4/5] object-cover" />
             </div>
             <div>
-              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">Strategy and delivery. One team.</h2>
+              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">Strategy and delivery. One team.</h2>
               <div className="space-y-4 body-lg text-primary-foreground/70">
                 <p>
                   Here's what usually happens. The fractional CMO builds a strategy. Hands it to an agency to execute. The agency interprets it their own way. Things get lost. Accountability blurs.
@@ -327,7 +327,7 @@ const FractionalCMO = () => {
       <section className="section-light">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="max-w-3xl mb-10">
-            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-3">How it works.</h2>
+            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-3">How it works.</h2>
             <p className="body-lg text-muted-foreground">
               We don't start with campaigns. We start with clarity.
             </p>
@@ -354,8 +354,8 @@ const FractionalCMO = () => {
             ))}
           </div>
           {/* Featured pull-quote */}
-          <div className="mt-10 py-8 border-t border-b border-border">
-            <p className="font-heading font-bold tracking-tight leading-[1.2] text-foreground" style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)" }}>
+          <div className="mt-10 text-center">
+            <p className="font-heading font-bold tracking-tight leading-[1.2] text-foreground" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}>
               No frameworks with clever names.<br />
               No proprietary methodologies.<br />
               Just a logical sequence:<br />
@@ -368,7 +368,7 @@ const FractionalCMO = () => {
       {/* WHAT'S INCLUDED */}
       <section className="section-dark">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
-          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-10">What's included.</h2>
+          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-10">What's included.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
             {included.map((item, i) => (
               <div key={i} className="py-5 border-t border-primary-foreground/15">
@@ -389,7 +389,7 @@ const FractionalCMO = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
             <div>
-              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">Who this is for.</h2>
+              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">Who this is for.</h2>
               <div className="space-y-4">
                 <p className="body-lg text-muted-foreground">
                   Business owners doing $2M to $20M who are spending on marketing but can't see where it's going. You've outgrown doing it yourself. You're not ready for a full-time hire. You're frustrated by providers who confuse activity with results.
@@ -426,7 +426,7 @@ const FractionalCMO = () => {
       <section className="section-dark">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">Confusion is expensive.</h2>
+            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">Confusion is expensive.</h2>
             <div className="space-y-4 mb-10">
               <p className="body-lg text-primary-foreground/70">
                 The platforms aren't working for you anymore. They're testing on you. Every algorithm shift, every "smart" feature, every AI update moves the goalposts while you foot the bill.
@@ -470,7 +470,7 @@ const FractionalCMO = () => {
               <img src={fcmo2} alt="Toby — Mamba Digital" className="w-full aspect-[4/5] object-cover" />
             </div>
             <div>
-              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">
+              <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">
                 A CMO who reads your P&L before your brand guidelines.
               </h2>
               <div className="space-y-4 body-lg text-muted-foreground">
@@ -493,7 +493,7 @@ const FractionalCMO = () => {
       <section className="section-dark">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-14 gap-6">
-            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem]">Businesses we've led.</h2>
+            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem]">Businesses we've led.</h2>
             <a href="/#work" className="btn-primary self-start md:self-auto">
               All Case Studies
             </a>
@@ -536,7 +536,7 @@ const FractionalCMO = () => {
       <section className="section-light">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
           <div className="max-w-4xl">
-            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6">
+            <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6">
               Based in Perth. Built for WA businesses.
             </h2>
             <div className="space-y-4 body-lg text-muted-foreground">
@@ -557,7 +557,7 @@ const FractionalCMO = () => {
       {/* FAQ */}
       <section className="section-dark">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20">
-          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-10">Questions people usually ask.</h2>
+          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-10">Questions people usually ask.</h2>
           <div className="max-w-3xl">
             {faqs.map((faq, i) => (
               <FAQItem key={i} q={faq.q} a={faq.a} />
@@ -569,7 +569,7 @@ const FractionalCMO = () => {
       {/* FINAL CTA */}
       <section className="section-accent">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 md:py-20 text-center">
-          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-3xl md:text-4xl lg:text-[2.75rem] mb-6 text-accent-foreground">
+          <h2 className="font-heading font-bold tracking-tight leading-[1.1] text-[2rem] md:text-[2.5rem] lg:text-[3.6rem] mb-6 text-accent-foreground">
             Book a conversation. No pitch.
           </h2>
           <p className="body-lg text-accent-foreground/80 max-w-2xl mx-auto mb-10">
