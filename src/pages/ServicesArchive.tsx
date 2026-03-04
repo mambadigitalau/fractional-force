@@ -204,8 +204,8 @@ const ProofStrip = () => {
   );
 };
 
-// Get 3 case studies for the proof strip
-const proofStudies = caseStudies.slice(0, 3);
+// Get 6 case studies for the proof strip carousel
+const proofStudies = caseStudies.slice(0, 6);
 
 const ServicesArchive = () => {
   return (
