@@ -528,8 +528,8 @@ const FractionalCMO = () => {
                     href={cs.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative block aspect-[3/4] overflow-hidden shrink-0"
-                    style={{ width: "calc((100vw - 48px - 16px) / 2.15)", scrollSnapAlign: "start" }}
+                    className="group relative block aspect-[3/4] overflow-hidden shrink-0 w-[80vw] sm:w-[calc((100vw-48px-16px)/2.15)]"
+                    style={{ scrollSnapAlign: "start" }}
                   >
                     <img
                       src={cs.image}
