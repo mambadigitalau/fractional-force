@@ -97,20 +97,20 @@ const CaseStudiesArchive = () => {
                     className="absolute inset-0 w-full h-full object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105"
                   />
                 </div>
-                <div className="bg-primary border border-primary-foreground/10 p-10 md:p-14 lg:p-16 flex flex-col justify-center">
+                <div className="bg-secondary border border-primary-foreground/10 p-10 md:p-14 lg:p-16 flex flex-col justify-center">
                   <p className="text-accent font-heading font-semibold text-xs tracking-[0.2em] uppercase mb-4">
                     Featured
                   </p>
-                  <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-primary-foreground mb-4 group-hover:text-accent transition-colors duration-300 leading-tight">
+                  <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4 group-hover:text-accent transition-colors duration-300 leading-tight">
                     {featured.title}
                   </h2>
-                  <p className="text-primary-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-6">
+                  <p className="text-muted-foreground/50 text-xs font-heading font-semibold tracking-wider uppercase mb-6">
                     {featured.tags.join(" · ")}
                   </p>
-                  <p className="body-lg text-primary-foreground/70 mb-8 max-w-lg">
+                  <p className="body-lg text-muted-foreground mb-8 max-w-lg">
                     {featured.desc}
                   </p>
-                  <span className="text-primary-foreground/40 group-hover:text-accent text-lg transition-all duration-300 group-hover:translate-x-2 self-start font-heading font-semibold">
+                  <span className="text-muted-foreground/40 group-hover:text-accent text-lg transition-all duration-300 group-hover:translate-x-2 self-start font-heading font-semibold">
                     Read case study &#8594;
                   </span>
                 </div>
