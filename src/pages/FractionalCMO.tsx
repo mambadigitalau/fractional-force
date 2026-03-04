@@ -332,17 +332,37 @@ const FractionalCMO = () => {
               We don't start with campaigns. We start with clarity.
             </p>
           </div>
-          <div className="space-y-0">
+          {/* Mobile carousel */}
+          <div className="md:hidden">
+            <div className="overflow-x-auto scrollbar-hide -mx-6 px-6" style={{ scrollSnapType: "x mandatory" }}>
+              <div className="flex gap-4" style={{ width: "max-content" }}>
+                {phases.map((p) => (
+                  <div
+                    key={p.num}
+                    className="bg-card border border-border p-6 shrink-0"
+                    style={{ width: "calc(100vw - 48px - 32px)", scrollSnapAlign: "start" }}
+                  >
+                    <span className="text-accent font-heading text-sm font-semibold">{p.num}</span>
+                    <h3 className="font-heading font-bold text-xl text-foreground mt-2">{p.title}</h3>
+                    <p className="text-accent font-heading font-semibold text-sm mt-1">{p.timeline}</p>
+                    <p className="body-lg text-muted-foreground mt-4">{p.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* Desktop rows */}
+          <div className="hidden md:block space-y-0">
             {phases.map((p) => (
               <div
                 key={p.num}
-                className="flex flex-col md:flex-row gap-4 md:gap-8 py-6 md:py-8 border-t border-border last:border-b"
+                className="flex flex-row gap-8 py-8 border-t border-border last:border-b"
               >
                 <span className="text-accent font-heading text-sm font-semibold w-10 shrink-0">
                   {p.num}
                 </span>
-                <div className="md:w-[30%] shrink-0">
-                  <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground">
+                <div className="w-[30%] shrink-0">
+                  <h3 className="font-heading font-bold text-2xl text-foreground">
                     {p.title}
                   </h3>
                   <p className="text-accent font-heading font-semibold text-sm mt-1">
