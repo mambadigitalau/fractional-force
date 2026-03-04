@@ -132,11 +132,11 @@ const Footer = () => {
 
         {/* Partner badges */}
         <div className="flex flex-wrap items-center gap-6 mb-10">
-          <img src={metaPartner} alt="Meta Business Partner" className="h-10 w-auto brightness-0 invert opacity-50" />
-          <img src={klaviyoMaster} alt="Klaviyo Master Partner" className="h-8 w-auto brightness-0 invert opacity-50" />
-          <img src={shopifyPartners} alt="Shopify Partners" className="h-5 w-auto brightness-0 invert opacity-50" />
+          <img src={metaPartner} alt="Meta Business Partner" className="h-12 w-auto" />
+          <img src={klaviyoMaster} alt="Klaviyo Master Partner" className="h-10 w-auto" />
+          <img src={shopifyPartners} alt="Shopify Partners" className="h-6 w-auto" />
           <a href="https://www.google.com/partners/agency?id=6852427839" target="_blank" rel="noopener noreferrer">
-            <img src={googlePartner} alt="Google Partner" className="h-12 w-auto brightness-0 invert opacity-50" />
+            <img src={googlePartner} alt="Google Partner" className="h-14 w-auto" />
           </a>
         </div>
 
