@@ -113,7 +113,7 @@ const DarkServiceRow = ({ s }: { s: (typeof executionServices)[0] }) => (
     <p className="hidden md:block text-primary-foreground/60 text-base flex-1 group-hover:text-primary-foreground/80 transition-colors duration-300">
       {s.desc}
     </p>
-    <span className="text-primary-foreground/20 group-hover:text-accent text-2xl transition-all duration-300 group-hover:translate-x-1">
+    <span className="ml-auto text-primary-foreground/20 group-hover:text-accent text-2xl transition-all duration-300 group-hover:translate-x-1 shrink-0">
       &#8594;
     </span>
   </Link>
