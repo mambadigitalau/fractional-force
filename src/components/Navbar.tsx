@@ -52,7 +52,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-10">
           {/* Services dropdown */}
           <div
             ref={dropdownRef}
@@ -110,7 +110,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-primary-foreground p-2"
+          className="lg:hidden text-primary-foreground p-2"
           aria-label="Toggle menu"
         >
           <div className="w-6 flex flex-col gap-1.5">
@@ -123,7 +123,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-primary border-t border-primary-foreground/10 animate-fade-in">
+        <div className="lg:hidden bg-primary border-t border-primary-foreground/10 animate-fade-in">
           <div className="px-6 py-8 flex flex-col gap-6">
             <Link
               to="/services"
