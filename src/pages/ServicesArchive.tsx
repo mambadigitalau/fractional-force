@@ -316,7 +316,7 @@ const ServicesArchive = () => {
 
       {/* STRATEGIC SERVICES */}
       <section className="section-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-10 md:pb-14">
           <div className="mb-10 md:mb-14">
             <h2 className="headline">Strategic leadership.</h2>
           </div>
@@ -330,7 +330,7 @@ const ServicesArchive = () => {
 
       {/* EXECUTION SERVICES — dark section for contrast */}
       <section className="section-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 pt-10 md:pt-14 pb-20 md:pb-28">
           <h2 className="headline mb-10 md:mb-14">
             Execution capabilities.
           </h2>
