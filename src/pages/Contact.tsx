@@ -52,28 +52,6 @@ const Contact = () => {
                     hello@mambadigital.au
                   </a>
                 </div>
-
-                {/* Partner badges */}
-                <div className="pt-8 border-t border-primary-foreground/10">
-                  <p className="text-primary-foreground/30 text-xs font-heading tracking-wider uppercase mb-4">
-                    Partners
-                  </p>
-                  <div className="flex flex-wrap gap-x-6 gap-y-2">
-                    {[
-                      "Google Partner",
-                      "Meta Business Partner",
-                      "Shopify Plus Partner",
-                      "Klaviyo Master Partner",
-                    ].map((p) => (
-                      <span
-                        key={p}
-                        className="text-xs text-primary-foreground/40 font-heading tracking-wide"
-                      >
-                        {p}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
 
