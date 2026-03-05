@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import mambamark from "@/assets/mamba-mark.png";
 
 const Contact = () => {
   return (
@@ -18,18 +19,15 @@ const Contact = () => {
                 <h1 className="headline-lg">
                   Let's talk.
                 </h1>
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden shrink-0 ring-2 ring-accent/30">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
-                    style={{ filter: "sepia(1) saturate(3) hue-rotate(110deg) brightness(1.1)" }}
-                  >
-                    <source src="/videos/mamba-bg.mp4" type="video/mp4" />
-                  </video>
-                </div>
+                <img
+                  src={mambamark}
+                  alt=""
+                  className="h-[1.1em] w-auto"
+                  style={{
+                    filter: "brightness(0) saturate(100%) invert(76%) sepia(52%) saturate(1217%) hue-rotate(110deg) brightness(98%) contrast(92%)",
+                    fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+                  }}
+                />
               </div>
               <p
                 className="body-lg text-primary-foreground/70 mb-16 animate-fade-up"
