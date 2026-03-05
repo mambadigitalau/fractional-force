@@ -118,13 +118,7 @@ const About = () => {
       <section className="section-dark">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 lg:gap-20">
-            <div className="flex items-start gap-4">
-              <img
-                src={mambamark}
-                alt=""
-                aria-hidden="true"
-                className="h-10 md:h-14 w-auto opacity-20"
-              />
+            <div>
               <h2 className="headline text-3xl md:text-4xl">How we work.</h2>
             </div>
             <div>
