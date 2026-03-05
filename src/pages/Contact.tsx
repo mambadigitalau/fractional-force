@@ -7,19 +7,6 @@ const Contact = () => {
       <Navbar />
 
       <section className="section-dark min-h-screen flex items-center pt-20 relative overflow-hidden">
-        {/* Background video — left column only */}
-        <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 overflow-hidden pointer-events-none">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.07]"
-          >
-            <source src="/videos/mamba-bg.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-accent/[0.04] mix-blend-screen" />
-        </div>
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             {/* LEFT — Copy */}
@@ -27,12 +14,23 @@ const Contact = () => {
               <p className="text-accent font-heading font-semibold text-xs tracking-[0.2em] uppercase mb-6 animate-fade-up">
                 Contact
               </p>
-              <h1
-                className="headline-lg mb-8 animate-fade-up"
-                style={{ animationDelay: "0.1s" }}
-              >
-                Let's talk.
-              </h1>
+              <div className="flex items-center gap-5 mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+                <h1 className="headline-lg">
+                  Let's talk.
+                </h1>
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden shrink-0 ring-2 ring-accent/30">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                    style={{ filter: "sepia(1) saturate(3) hue-rotate(110deg) brightness(1.1)" }}
+                  >
+                    <source src="/videos/mamba-bg.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
               <p
                 className="body-lg text-primary-foreground/70 mb-16 animate-fade-up"
                 style={{ animationDelay: "0.2s" }}
