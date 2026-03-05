@@ -223,7 +223,9 @@ const ServicesArchive = () => {
               className="headline-lg mb-8 md:mb-10 animate-fade-up"
               style={{ animationDelay: "0.1s" }}
             >
-              Strategy first. Execution built in.
+              Strategy first.
+              <br />
+              Execution built in.
             </h1>
             <p
               className="body-lg text-primary-foreground/70 max-w-2xl mb-12 animate-fade-up"
