@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import mambamark from "@/assets/mamba-mark.png";
 
 const Contact = () => {
   return (
@@ -8,6 +7,18 @@ const Contact = () => {
       <Navbar />
 
       <section className="section-dark min-h-screen flex items-center pt-20 relative overflow-hidden">
+        {/* Background video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.07] pointer-events-none"
+        >
+          <source src="/videos/mamba-bg.mp4" type="video/mp4" />
+        </video>
+        {/* Accent tint overlay */}
+        <div className="absolute inset-0 bg-accent/[0.04] mix-blend-screen pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             {/* LEFT — Copy */}
@@ -15,20 +26,12 @@ const Contact = () => {
               <p className="text-accent font-heading font-semibold text-xs tracking-[0.2em] uppercase mb-6 animate-fade-up">
                 Contact
               </p>
-              <div className="flex items-center gap-5 mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-                <h1 className="headline-lg">
-                  Let's talk.
-                </h1>
-                <img
-                  src={mambamark}
-                  alt=""
-                  className="h-[1.1em] w-auto"
-                  style={{
-                    filter: "brightness(0) saturate(100%) invert(76%) sepia(52%) saturate(1217%) hue-rotate(110deg) brightness(98%) contrast(92%)",
-                    fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
-                  }}
-                />
-              </div>
+              <h1
+                className="headline-lg mb-8 animate-fade-up"
+                style={{ animationDelay: "0.1s" }}
+              >
+                Let's talk.
+              </h1>
               <p
                 className="body-lg text-primary-foreground/70 mb-16 animate-fade-up"
                 style={{ animationDelay: "0.2s" }}
