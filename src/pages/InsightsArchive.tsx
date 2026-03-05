@@ -4,53 +4,59 @@ import FinalCTA from "@/components/FinalCTA";
 
 const posts = [
   {
-    title: "What a fractional CMO actually does (and doesn't do)",
-    category: "Strategy",
-    date: "February 2026",
+    title: "AI Agents for Business in 2026: They're Not Assistants. They're Employees.",
+    category: "AI",
+    date: "March 2026",
     excerpt:
-      "The role is senior leadership. Not doing the work. Not managing the work. Deciding which work is worth doing.",
-    slug: "#",
+      "AI agents are no longer tools you prompt. They're autonomous workers that execute, adapt, and deliver — without hand-holding.",
+    slug: "https://mambadigital.au/insights/",
+    image: "https://mambadigital.au/wp-content/uploads/2026/03/AI-For-Business.png",
     featured: true,
   },
   {
-    title: "Why your marketing report makes you feel dumber",
-    category: "Marketing",
-    date: "January 2026",
+    title: "What Is a Fractional CMO? The Complete Guide for Growing Australian Businesses",
+    category: "CMO, Strategy",
+    date: "February 2026",
     excerpt:
-      "If you can't understand the report, the report is the problem. Not you.",
-    slug: "#",
+      "The role is senior leadership. Not doing the work. Not managing the work. Deciding which work is worth doing.",
+    slug: "https://mambadigital.au/what-is-a-fractional-cmo-the-complete-guide-for-growing-australian-businesses/",
+    image: "https://mambadigital.au/wp-content/uploads/2026/03/What-is-a-CMO--768x410.jpg",
   },
   {
-    title: "The real cost of not having a marketing strategy",
-    category: "Strategy",
-    date: "December 2025",
-    excerpt:
-      "Every month without clarity costs more than the month before. Here's why.",
-    slug: "#",
-  },
-  {
-    title: "Email marketing is not dead. You're just doing it wrong.",
-    category: "Email",
+    title: "Meta Advantage+ Backlash: Why Advertisers Are Frustrated – How We Fix It",
+    category: "AI, Paid",
     date: "November 2025",
     excerpt:
-      "The highest-ROI channel most businesses ignore. A breakdown of what actually works.",
-    slug: "#",
+      "Meta's black-box automation is frustrating advertisers everywhere. Here's what's actually going on — and how to take back control.",
+    slug: "https://mambadigital.au/meta-advantage-backlash-why-advertisers-are-frustrated-how-we-fix-it/",
+    image: "https://mambadigital.au/wp-content/uploads/2025/12/MetaBacklash_BlogImage_1366-%C3%97-768.png-768x428.jpg",
   },
   {
-    title: "Impressions aren't income: rethinking paid media metrics",
-    category: "Paid Advertising",
+    title: "Why Your Perth Business Needs a Fractional CMO (Not a Full-Time Hire)",
+    category: "CMO",
     date: "October 2025",
     excerpt:
-      "If your ad report doesn't connect to revenue, it's not a report. It's a distraction.",
-    slug: "#",
+      "You don't need a full-time marketing executive. You need the right one, at the right time, for the right scope.",
+    slug: "https://mambadigital.au/why-your-perth-business-needs-a-fractional-cmo-not-a-full-time-hire/",
+    image: "https://mambadigital.au/wp-content/uploads/2025/10/Why-Your-Perth-Business-Needs-a-Fractional-CMO-768x432.jpg",
   },
   {
-    title: "How we turned a $0 email channel into $3M for an eCommerce brand",
-    category: "Case Study",
-    date: "September 2025",
+    title: "Paid Social Media Strategy for Meta Ads: The Financial Edge that Drives Results",
+    category: "Paid, Strategy",
+    date: "May 2025",
     excerpt:
-      "No flows. No automation. No strategy. Here's how we built it from scratch.",
-    slug: "#",
+      "If your ad report doesn't connect to revenue, it's not a report. It's a distraction.",
+    slug: "https://mambadigital.au/paid-social-media-strategy-for-meta-facebook-instagram-ads-the-financial-edge-that-drives-results/",
+    image: "https://mambadigital.au/wp-content/uploads/2025/05/Blog-Paid-Social-Media-Strategy-for-Meta-V2-768x439.png",
+  },
+  {
+    title: "How to Develop a Social Media Marketing Strategy (Step-by-Step Guide)",
+    category: "Content, Strategy",
+    date: "March 2025",
+    excerpt:
+      "The highest-ROI channel most businesses ignore. A breakdown of what actually works.",
+    slug: "https://mambadigital.au/how-to-develop-a-social-media-marketing-strategy-step-by-step-guide/",
+    image: "https://mambadigital.au/wp-content/uploads/2025/03/u5948933713_A_high-resolution_photorealistic_image_of_a_small_d_67d6f04f-86d9-4858-bc8e-5f76e12dbed0-768x439.png",
   },
 ];
 
@@ -90,7 +96,7 @@ const InsightsArchive = () => {
       {featuredPost && (
         <section className="section-light border-b border-border">
           <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24">
-            <a href={featuredPost.slug} className="group block">
+            <a href={featuredPost.slug} target="_blank" rel="noopener noreferrer" className="group block">
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-center">
                 <div>
                   <div className="flex items-center gap-3 mb-5">
@@ -112,12 +118,13 @@ const InsightsArchive = () => {
                     Read article &#8594;
                   </span>
                 </div>
-                <div className="bg-muted aspect-[16/10] flex items-center justify-center border border-border">
-                  <div className="text-center px-8">
-                    <p className="text-muted-foreground/20 font-heading font-bold tracking-wider uppercase" style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}>
-                      Insights
-                    </p>
-                  </div>
+                <div className="overflow-hidden aspect-[16/10] border border-border">
+                  <img
+                    src={featuredPost.image}
+                    alt={featuredPost.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </a>
@@ -133,11 +140,21 @@ const InsightsArchive = () => {
               <a
                 key={i}
                 href={post.slug}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-8 md:py-10 border-t border-border last:border-b"
               >
-                <span className="text-accent font-heading text-sm font-semibold w-10 shrink-0 md:pt-1">
+                <span className="text-accent font-heading text-sm font-semibold w-10 shrink-0 md:pt-1 hidden md:block">
                   {String(i + 1).padStart(2, "0")}
                 </span>
+                <div className="shrink-0 w-full md:w-48 lg:w-56 overflow-hidden aspect-[16/9] md:aspect-[16/10]">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-accent font-heading font-semibold text-xs tracking-[0.15em] uppercase">
