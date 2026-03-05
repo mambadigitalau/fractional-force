@@ -315,14 +315,14 @@ const ServicesArchive = () => {
       </section>
 
       {/* STRATEGIC SERVICES */}
-      <section className="section-light">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 pb-20 md:pb-28">
+      <section className="section-dark">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
           <div className="mb-10 md:mb-14">
             <h2 className="headline">Strategic leadership.</h2>
           </div>
           <div className="space-y-0">
             {strategicServices.map((s) => (
-              <ServiceRow key={s.num} s={s} />
+              <DarkServiceRow key={s.num} s={s} />
             ))}
           </div>
         </div>
