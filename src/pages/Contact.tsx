@@ -6,7 +6,19 @@ const Contact = () => {
     <>
       <Navbar />
 
-      <section className="section-dark min-h-screen flex items-center pt-20">
+      <section className="section-dark min-h-screen flex items-center pt-20 relative overflow-hidden">
+        {/* Background video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.07] pointer-events-none"
+        >
+          <source src="/videos/mamba-bg.mp4" type="video/mp4" />
+        </video>
+        {/* Accent tint overlay */}
+        <div className="absolute inset-0 bg-accent/[0.04] mix-blend-screen pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             {/* LEFT — Copy */}
