@@ -7,15 +7,15 @@ const Contact = () => {
       <Navbar />
 
       <section className="section-dark min-h-screen flex items-center pt-20 relative overflow-hidden">
-        {/* Light accent-tinted animation on dark background */}
-        <div className="absolute inset-0 pointer-events-none mix-blend-screen">
+        {/* Light accent animation while preserving dark base background */}
+        <div className="absolute inset-0 pointer-events-none mix-blend-lighten">
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.15]"
-            style={{ filter: "brightness(3) contrast(1.2) sepia(1) hue-rotate(120deg) saturate(3)" }}
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.4]"
+            style={{ filter: "invert(1) sepia(1) hue-rotate(110deg) saturate(3) brightness(1.25) contrast(1.3)" }}
           >
             <source src="/videos/mamba-bg.mp4" type="video/mp4" />
           </video>
