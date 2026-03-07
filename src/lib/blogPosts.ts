@@ -1,5 +1,5 @@
 export interface BlogSection {
-  type: "paragraph" | "heading" | "bold-paragraph" | "italic-paragraph" | "separator";
+  type: "paragraph" | "heading" | "italic-paragraph" | "separator";
   content?: string;
 }
 
