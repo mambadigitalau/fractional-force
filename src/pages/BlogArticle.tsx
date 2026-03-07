@@ -84,16 +84,6 @@ const BlogArticle = () => {
         </h2>
       );
     }
-    if (section.type === "bold-paragraph") {
-      return (
-        <p
-          key={i}
-          className="text-foreground text-base md:text-lg leading-[1.75] mb-5"
-        >
-          <strong>{section.content}</strong>
-        </p>
-      );
-    }
     if (section.type === "italic-paragraph") {
       return (
         <p
