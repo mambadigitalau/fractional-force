@@ -80,7 +80,7 @@ export const blogPosts: BlogPost[] = [
           "If you haven't been paying attention since January, you've missed a lot. Here's the highlight reel, and it's worth reading slowly.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Anthropic (the company behind Claude) acquired a startup called Vercept in late February to make Claude better at using computers the way humans do. Clicking buttons. Navigating software. Filling in forms. They also released Claude Opus 4.6 with a one-million-token context window, which means it can hold and process the equivalent of roughly 3,000 pages of text in a single conversation. Then they launched Cowork, a desktop tool that lets Claude read, edit, and create files on your actual computer. Not in a browser window. On your machine, in your folders, touching your files.",
       },
@@ -90,22 +90,22 @@ export const blogPosts: BlogPost[] = [
           "Apple integrated Claude's agent technology directly into Xcode, their developer tool. The world's most valuable company decided Claude was the engine it wanted powering its development environment.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "OpenAI merged its web-browsing agent (Operator) and its research agent (Deep Research) into a single system called ChatGPT Agent. It can now browse the web, interact with websites, and produce analyst-grade research reports, all in one flow. Previously those were separate tools. Now it's one employee that can both research and act.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           'Google launched Workspace Studio, which lets anyone create AI agents inside Google Workspace using plain English. No code. You literally type "every Friday, ping me to update my tracker" and it builds the agent. That rolled out to all users on February 27th.',
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Salesforce reported that its Agentforce platform handled 2.8 million customer support requests internally last year, saving hundreds of thousands of employee hours. They closed 22,000 Agentforce deals in Q4 alone. Their AI revenue hit $800 million ARR. That's not a pilot programme. That's a business unit.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Devin, the AI software engineer, went from $1 million in annual revenue to $73 million in under a year. Goldman Sachs calls it their first AI employee. It's now authorised for use across US federal government agencies. It merges hundreds of thousands of code changes without a human writing a single line.",
       },
@@ -158,27 +158,27 @@ export const blogPosts: BlogPost[] = [
           "Forget the Silicon Valley demos. Here's what this looks like for a business doing $2 million to $15 million somewhere in Australia.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Accounts receivable. Right now, someone on your team chases late invoices. They check the system, draft the email, maybe make a call, update the notes. An AI agent monitors payment terms automatically, sends graduated follow-ups based on how overdue the invoice is, escalates to your accounts manager when it hits a threshold you set, and logs every interaction. Your person handles the exceptions. The agent handles the pattern.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Customer enquiries. Not a chatbot that says \"I'll pass this to a human.\" An agent that reads the enquiry, pulls up the customer's history, checks your policies, makes the decision within the guardrails you've set, and closes the ticket. The customer gets a resolution in minutes. Your team handles the 5% of cases that genuinely need a human brain.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Recruitment. An agent that screens applications against your criteria, schedules interviews with candidates who pass, sends polite rejections to those who don't, and presents you with a shortlist. Not a filtered inbox. A completed first round.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Marketing. An agent that monitors your campaign performance, flags anomalies, pauses underperforming ads, reallocates budget to what's working, and sends you a summary. Not a dashboard you never check. An employee who checks it for you.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Sales follow-up. An agent that sends personalised follow-ups to prospects who went quiet, re-engages leads based on their behaviour, books meetings into your calendar, and flags which deals need your personal attention. Your best salesperson never forgets to follow up. Neither does an agent.",
       },
@@ -234,27 +234,27 @@ export const blogPosts: BlogPost[] = [
         content: "What to do with this. Specifically.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Step one. Identify the three tasks in your business that follow a repeatable process and eat the most hours. Late invoice follow-ups. Quote requests. Appointment scheduling. Report generation. Onboarding paperwork. Customer FAQ responses. Data entry. Stock reordering. Pick three.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Step two. Rank them by pain. Which one costs you the most time, creates the most frustration, or has the highest error rate? Start there. Not with three. With one.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Step three. Match the task to a tool. You don't need a custom-built AI system. Salesforce Agentforce handles CRM and sales automation. Klaviyo's AI handles email flows. Claude handles research, content, and file work. Google Workspace Studio handles internal workflow automation. The tools exist. The question is which problem you point them at.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Step four. Set the guardrails. Define what the agent can do autonomously and what requires your approval. Start conservative. Loosen as you build confidence.",
       },
       {
-        type: "bold-paragraph",
+        type: "paragraph",
         content:
           "Step five. Measure. Not \"does this feel like it's working.\" Measure hours saved. Measure error rates. Measure response times. Measure revenue impact. If you can't measure it, you haven't defined the problem well enough.",
       },
